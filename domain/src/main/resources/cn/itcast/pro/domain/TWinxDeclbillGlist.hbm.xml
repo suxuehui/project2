@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="cn.itcast.pro.domain.TWinxDeclbillGlist" table="T_WINX_DECLBILL_GLIST" schema="PROUSER">
+        <id name="id" column="ID "/>
+        <property name="declBillHeadId" column="DECL_BILL_HEAD_ID "/>
+        <property name="gno" column="GNO "/>
+        <property name="codeTs" column="CODE_TS "/>
+        <property name="gname" column="GNAME "/>
+        <property name="gmodel" column="GMODEL "/>
+        <property name="tradeDocCode" column="TRADE_DOC_CODE "/>
+        <property name="declQty" column="DECL_QTY "/>
+        <property name="declUnit" column="DECL_UNIT "/>
+        <property name="declPrice" column="DECL_PRICE "/>
+        <property name="declTotal" column="DECL_TOTAL "/>
+        <property name="teadeCurr" column="TEADE_CURR "/>
+        <property name="qty1" column="QTY1 "/>
+        <property name="unit1" column="Unit1 "/>
+        <property name="qty2" column="Qty2 "/>
+        <property name="unit2" column="Unit2 "/>
+        <property name="originCountry" column="OriginCountry "/>
+        <property name="createTime" column="CreateTime "/>
+        <property name="updateTime" column="UpdateTime "/>
+        <property name="spt1" column="SPT1 "/>
+        <property name="spt2" column="SPT2"/>
+        <property name="spt3" column="SPT3"/>
+    </class>
+</hibernate-mapping>

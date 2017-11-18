@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="cn.itcast.pro.domain.TWinxExbHead" table="T_WINX_EXB_HEAD" schema="PROUSER">
+        <id name="id" column="ID"/>
+        <property name="seqNo" column="SEQ_NO"/>
+        <property name="preSeqNo" column="PRE_SEQ_NO"/>
+        <property name="declDate" column="DECL_DATE"/>
+        <property name="exbNo" column="EXB_NO"/>
+        <property name="exbName" column="EXB_NAME"/>
+        <property name="masterCustom" column="MASTER_CUSTOM"/>
+        <property name="recordCustom" column="RECORD_CUSTOM"/>
+        <property name="apprName" column="APPR_NAME"/>
+        <property name="apprNo" column="APPR_NO"/>
+        <property name="masterName" column="MASTER_NAME"/>
+        <property name="masterPrin" column="MASTER_PRIN"/>
+        <property name="masterPrinpHone" column="MASTER_PRINP_HONE"/>
+        <property name="undertakerName" column="UNDERTAKER_NAME"/>
+        <property name="checkPrin" column="CHECK_PRIN"/>
+        <property name="openDate" column="OPEN_DATE"/>
+        <property name="closeDate" column="CLOSE_DATE"/>
+        <property name="exbRoom" column="EXB_ROOM"/>
+        <property name="exbArea" column="EXB_AREA"/>
+        <property name="exbIntlArea" column="EXB_INTL_AREA"/>
+        <property name="attendCountryNum" column="ATTEND_COUNTRY_NUM"/>
+        <property name="intlTraderNum" column="INTL_TRADER_NUM"/>
+        <property name="taiwanTraderAppr" column="TAIWAN_TRADER_APPR"/>
+        <property name="decno" column="DECNO"/>
+        <property name="decnoPhone" column="DECNO_PHONE"/>
+        <property name="agentCode" column="AGENT_CODE"/>
+        <property name="agentName" column="AGENT_NAME"/>
+        <property name="amentReason" column="AMENT_REASON"/>
+        <property name="notes" column="NOTES"/>
+        <property name="exbStatus" column="EXB_STATUS"/>
+        <property name="ieFlag" column="IE_FLAG"/>
+        <property name="status" column="STATUS"/>
+        <property name="userId" column="USER_ID"/>
+        <property name="userName" column="USER_NAME"/>
+        <property name="orgCode" column="ORG_CODE"/>
+        <property name="orgName" column="ORG_NAME"/>
+        <property name="createTime" column="CREATE_TIME"/>
+        <property name="updateTime" column="UPDATE_TIME"/>
+        <property name="sendCustomTime" column="SEND_CUSTOM_TIME"/>
+        <property name="sendInspectionTime" column="SEND_INSPECTION_TIME"/>
+        <property name="spt1" column="SPT1"/>
+        <property name="spt2" column="SPT2"/>
+        <property name="spt3" column="SPT3"/>
+    </class>
+</hibernate-mapping>

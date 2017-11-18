@@ -12,6 +12,22 @@
 		<property name="hibernate.enable_lazy_load_no_trans">true</property>
 
 
-	</session-factory>
+        <mapping resource="cn/itcast/pro/domain/ExbGoodsCancelEntList.hbm.xml"/>
+        <mapping resource="cn/itcast/pro/domain/ExbGoodsCancelGList.hbm.xml"/>
+        <mapping resource="cn/itcast/pro/domain/ReDpEntlist.hbm.xml"/>
+        <mapping resource="cn/itcast/pro/domain/ReDpHead.hbm.xml"/>
+        <mapping resource="cn/itcast/pro/domain/TWinxDeclbillDocList.hbm.xml"/>
+        <mapping resource="cn/itcast/pro/domain/TWinxDeclbillEntList.hbm.xml"/>
+        <mapping resource="cn/itcast/pro/domain/TWinxDeclbillGlist.hbm.xml"/>
+        <mapping resource="cn/itcast/pro/domain/TWinxDeclbillHead.hbm.xml"/>
+        <mapping resource="cn/itcast/pro/domain/TWinxExbAgentList.hbm.xml"/>
+        <mapping resource="cn/itcast/pro/domain/TWinxExbBillList.hbm.xml"/>
+        <mapping resource="cn/itcast/pro/domain/TWinxExbEntList.hbm.xml"/>
+        <mapping resource="cn/itcast/pro/domain/TWinxExbHead.hbm.xml"/>
+        <mapping resource="cn/itcast/pro/domain/TWinxWrntHead.hbm.xml"/>
+        <mapping resource="cn/itcast/pro/domain/TWinxWrntList.hbm.xml"/>
+
+
+    </session-factory>
 </hibernate-configuration>
 

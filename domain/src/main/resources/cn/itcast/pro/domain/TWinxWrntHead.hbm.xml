@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="cn.itcast.pro.domain.TWinxWrntHead" table="T_WINX_WRNT_HEAD" schema="PROUSER">
+        <id name="id" column="ID"/>
+        <property name="seqNo" column="SEQ_NO"/>
+        <property name="preSeqNo" column="PRE_SEQ_NO"/>
+        <property name="declDate" column="DECL_DATE"/>
+        <property name="wrntNo" column="WRNT_NO"/>
+        <property name="exbNo" column="EXB_NO"/>
+        <property name="exbName" column="EXB_NAME"/>
+        <property name="masterCustom" column="MASTER_CUSTOM"/>
+        <property name="recordCustom" column="RECORD_CUSTOM"/>
+        <property name="masterName" column="MASTER_NAME"/>
+        <property name="agentCode" column="AGENT_CODE"/>
+        <property name="agentName" column="AGENT_NAME"/>
+        <property name="decno" column="DECNO"/>
+        <property name="decnoPhone" column="DECNO_PHONE"/>
+        <property name="notes" column="NOTES"/>
+        <property name="status" column="STATUS"/>
+        <property name="userId" column="USER_ID"/>
+        <property name="userName" column="USER_NAME"/>
+        <property name="orgCode" column="ORG_CODE"/>
+        <property name="orgName" column="ORG_NAME"/>
+        <property name="createTime" column="CREATE_TIME"/>
+        <property name="updateTime" column="UPDATE_TIME"/>
+        <property name="sendCustomTime" column="SEND_CUSTOM_TIME"/>
+        <property name="sendInspectionTime" column="SEND_INSPECTION_TIME"/>
+        <property name="spt1" column="SPT1"/>
+        <property name="spt2" column="SPT2"/>
+        <property name="spt3" column="SPT3"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="cn.itcast.pro.domain.TWinxDeclbillDocList" table="T_WINX_DECLBILL_DOC_LIST" schema="PROUSER">
+        <id name="id" column="ID "/>
+        <property name="declBillHeadId" column="DECL_BILL_HEAD_ID "/>
+        <property name="docuNo" column="DOCU_NO "/>
+        <property name="docuCode" column="DOCU_CODE "/>
+        <property name="certCode" column="CERT_CODE "/>
+        <property name="createTime" column="CREATE_TIME "/>
+        <property name="updateTime" column="UPDATE_TIME "/>
+        <property name="spt1" column="SPT1 "/>
+        <property name="spt2" column="SPT2"/>
+        <property name="spt3" column="SPT3"/>
+    </class>
+</hibernate-mapping>

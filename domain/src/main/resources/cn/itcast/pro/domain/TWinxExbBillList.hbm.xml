@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="cn.itcast.pro.domain.TWinxExbBillList" table="T_WINX_EXB_BILL_LIST" schema="PROUSER">
+        <id name="id" column="ID"/>
+        <property name="exbId" column="EXB_ID"/>
+        <property name="gNo" column="G_NO"/>
+        <property name="codeTs" column="CODE_TS"/>
+        <property name="gName" column="G_NAME"/>
+        <property name="createTime" column="CREATE_TIME"/>
+        <property name="updateTime" column="UPDATE_TIME"/>
+        <property name="spt1" column="SPT1"/>
+        <property name="spt2" column="SPT2"/>
+        <property name="spt3" column="SPT3"/>
+    </class>
+</hibernate-mapping>
