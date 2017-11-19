@@ -51,8 +51,21 @@
 
         <!--与展商列表一对多-->
         <set name="TWinxDeclbillEntLists" inverse="true" cascade="all">
-            <key column="DECL_BILL_HEAD_ID"></key>
-            <one-to-many></one-to-many>
+            <key column="DECL_BILL_HEAD_ID"/>
+            <one-to-many class="cn.itcast.pro.domain.TWinxDeclbillEntList"/>
+        </set>
+
+        <!--与随附单证列表 一对多-->
+        <set name="TWinxDeclbillDocLists" inverse="true" cascade="all">
+            <key column="DECL_BILL_HEAD_ID"/>
+            <one-to-many class="cn.itcast.pro.domain.TWinxDeclbillDocList"/>
+        </set>
+
+        <!--与进境申报清单 一对多-->
+
+        <set name="TWinxDeclbillGlists" inverse="true" cascade="all">
+            <key column="DECL_BILL_HEAD_ID"/>
+            <one-to-many class="cn.itcast.pro.domain.TWinxDeclbillGlist"/>
         </set>
 
     </class>

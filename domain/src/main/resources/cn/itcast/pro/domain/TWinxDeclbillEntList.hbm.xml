@@ -5,7 +5,11 @@
 <hibernate-mapping>
 
     <class name="cn.itcast.pro.domain.TWinxDeclbillEntList" table="T_WINX_DECLBILL_ENT_LIST" schema="PROUSER">
-        <id name="id" column="ID"/>
+        <id name="id" column="ID">
+            <generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+                <param name="sequence_name">SEQ_T_WINX_DECLBILL_ENT_LIST</param>
+            </generator>
+        </id>
         <property name="declBillHeadId" column="DECL_BILL_HEAD_ID"/>
         <property name="exbEntNo" column="EXB_ENT_NO"/>
         <property name="entName" column="ENT_NAME"/>
@@ -17,5 +21,9 @@
         <property name="spt1" column="SPT1"/>
         <property name="spt2" column="SPT2"/>
         <property name="spt3" column="SPT3"/>
+
+        <!--与进境申报清单表头 多对一-->
+        <many-to-one name="TWinxDeclbillHead" class="cn.itcast.pro.domain.TWinxDeclbillHead"
+                     column="decl_bill_head_id"/>
     </class>
 </hibernate-mapping>

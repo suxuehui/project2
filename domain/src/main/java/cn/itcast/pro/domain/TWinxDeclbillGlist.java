@@ -32,6 +32,20 @@ public class TWinxDeclbillGlist implements Serializable {
     private String spt2;
     private String spt3;
 
+
+    /**
+     * 与进境申报清单表头 多对一
+     */
+    private TWinxDeclbillHead tWinxDeclbillHead;
+
+    public TWinxDeclbillHead getTWinxDeclbillHead() {
+        return tWinxDeclbillHead;
+    }
+
+    public void setTWinxDeclbillHead(TWinxDeclbillHead tWinxDeclbillHead) {
+        this.tWinxDeclbillHead = tWinxDeclbillHead;
+    }
+
     public Long getId() {
         return id;
     }

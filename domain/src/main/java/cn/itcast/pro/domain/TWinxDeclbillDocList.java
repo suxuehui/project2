@@ -21,6 +21,20 @@ public class TWinxDeclbillDocList implements Serializable {
     private String spt2;
     private String spt3;
 
+
+    /**
+     * 与进境申报清单表头 多对一
+     */
+    private TWinxDeclbillHead tWinxDeclbillHead;
+
+    public TWinxDeclbillHead getTWinxDeclbillHead() {
+        return tWinxDeclbillHead;
+    }
+
+    public void setTWinxDeclbillHead(TWinxDeclbillHead tWinxDeclbillHead) {
+        this.tWinxDeclbillHead = tWinxDeclbillHead;
+    }
+
     public Long getId() {
         return id;
     }
@@ -101,40 +115,4 @@ public class TWinxDeclbillDocList implements Serializable {
         this.spt3 = spt3;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        TWinxDeclbillDocList that = (TWinxDeclbillDocList) o;
-
-        if (id != that.id) return false;
-        if (declBillHeadId != null ? !declBillHeadId.equals(that.declBillHeadId) : that.declBillHeadId != null)
-            return false;
-        if (docuNo != null ? !docuNo.equals(that.docuNo) : that.docuNo != null) return false;
-        if (docuCode != null ? !docuCode.equals(that.docuCode) : that.docuCode != null) return false;
-        if (certCode != null ? !certCode.equals(that.certCode) : that.certCode != null) return false;
-        if (createTime != null ? !createTime.equals(that.createTime) : that.createTime != null) return false;
-        if (updateTime != null ? !updateTime.equals(that.updateTime) : that.updateTime != null) return false;
-        if (spt1 != null ? !spt1.equals(that.spt1) : that.spt1 != null) return false;
-        if (spt2 != null ? !spt2.equals(that.spt2) : that.spt2 != null) return false;
-        if (spt3 != null ? !spt3.equals(that.spt3) : that.spt3 != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = (int) (id ^ (id >>> 32));
-        result = 31 * result + (declBillHeadId != null ? declBillHeadId.hashCode() : 0);
-        result = 31 * result + (docuNo != null ? docuNo.hashCode() : 0);
-        result = 31 * result + (docuCode != null ? docuCode.hashCode() : 0);
-        result = 31 * result + (certCode != null ? certCode.hashCode() : 0);
-        result = 31 * result + (createTime != null ? createTime.hashCode() : 0);
-        result = 31 * result + (updateTime != null ? updateTime.hashCode() : 0);
-        result = 31 * result + (spt1 != null ? spt1.hashCode() : 0);
-        result = 31 * result + (spt2 != null ? spt2.hashCode() : 0);
-        result = 31 * result + (spt3 != null ? spt3.hashCode() : 0);
-        return result;
-    }
 }
