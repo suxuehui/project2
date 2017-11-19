@@ -5,7 +5,11 @@
 <hibernate-mapping>
 
     <class name="cn.itcast.pro.domain.TWinxWrntHead" table="T_WINX_WRNT_HEAD" schema="PROUSER">
-        <id name="id" column="ID"/>
+        <id name="id" column="ID">
+            <generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+                <param name="sequence_name">SEQ_T_WINX_WRNT_HEAD</param>
+            </generator>
+        </id>
         <property name="seqNo" column="SEQ_NO"/>
         <property name="preSeqNo" column="PRE_SEQ_NO"/>
         <property name="declDate" column="DECL_DATE"/>
@@ -32,5 +36,13 @@
         <property name="spt1" column="SPT1"/>
         <property name="spt2" column="SPT2"/>
         <property name="spt3" column="SPT3"/>
+
+        <!--与展览会行政许可清单表体 一对多-->
+        <set name="TWinxWrntLists" inverse="true" cascade="all">
+            <key column="WRNT_ID "/>
+            <one-to-many class="cn.itcast.pro.domain.TWinxWrntList"/>
+        </set>
+
+
     </class>
 </hibernate-mapping>

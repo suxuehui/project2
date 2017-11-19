@@ -1,24 +1,27 @@
 package cn.itcast.pro.domain;
 
-import java.sql.Time;
+import java.io.Serializable;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by JohnBi on 2017-11-18. 17:24
  *
  * @author Lemon
  */
-public class TWinxDeclbillHead {
-    private long id;
+public class TWinxDeclbillHead implements Serializable{
+    private Long id;
     private String seqNo;
     private String preSeqNo;
-    private Time declDate;
+    private Date declDate;
     private String listNo;
     private String wrntNo;
     private String exbNo;
     private String exbName;
     private String masterCustom;
     private String iePort;
-    private Time ieDate;
+    private Date ieDate;
     private String agentCode;
     private String agentName;
     private String licenseNo;
@@ -39,21 +42,36 @@ public class TWinxDeclbillHead {
     private String userName;
     private String orgCode;
     private String orgName;
-    private Time createTime;
-    private Time updateTime;
-    private Time sendCustomTime;
-    private Time sendInspectionTime;
+    private Date createTime;
+    private Date updateTime;
+    private Date sendCustomTime;
+    private Date sendInspectionTime;
     private String spt1;
     private String spt2;
     private String spt3;
 
-    public long getId() {
+    /**
+     * 与展商列表一对多
+     */
+    private Set<TWinxDeclbillEntList> tWinxDeclbillEntLists = new HashSet<>();
+
+
+    public Set<TWinxDeclbillEntList> getTWinxDeclbillEntLists() {
+        return tWinxDeclbillEntLists;
+    }
+
+    public void setTWinxDeclbillEntLists(Set<TWinxDeclbillEntList> tWinxDeclbillEntLists) {
+        this.tWinxDeclbillEntLists = tWinxDeclbillEntLists;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
+
 
     public String getSeqNo() {
         return seqNo;
@@ -71,11 +89,11 @@ public class TWinxDeclbillHead {
         this.preSeqNo = preSeqNo;
     }
 
-    public Time getDeclDate() {
+    public Date getDeclDate() {
         return declDate;
     }
 
-    public void setDeclDate(Time declDate) {
+    public void setDeclDate(Date declDate) {
         this.declDate = declDate;
     }
 
@@ -127,11 +145,11 @@ public class TWinxDeclbillHead {
         this.iePort = iePort;
     }
 
-    public Time getIeDate() {
+    public Date getIeDate() {
         return ieDate;
     }
 
-    public void setIeDate(Time ieDate) {
+    public void setIeDate(Date ieDate) {
         this.ieDate = ieDate;
     }
 
@@ -295,35 +313,35 @@ public class TWinxDeclbillHead {
         this.orgName = orgName;
     }
 
-    public Time getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Time createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
-    public Time getUpdateTime() {
+    public Date getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Time updateTime) {
+    public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
 
-    public Time getSendCustomTime() {
+    public Date getSendCustomTime() {
         return sendCustomTime;
     }
 
-    public void setSendCustomTime(Time sendCustomTime) {
+    public void setSendCustomTime(Date sendCustomTime) {
         this.sendCustomTime = sendCustomTime;
     }
 
-    public Time getSendInspectionTime() {
+    public Date getSendInspectionTime() {
         return sendInspectionTime;
     }
 
-    public void setSendInspectionTime(Time sendInspectionTime) {
+    public void setSendInspectionTime(Date sendInspectionTime) {
         this.sendInspectionTime = sendInspectionTime;
     }
 

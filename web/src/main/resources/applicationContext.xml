@@ -53,7 +53,7 @@
 
 	<!-- 6.aop-->
 	<aop:config>
-		<aop:pointcut id="pointcut" expression="execution(* cn.itcast.pro.service.*.*(..))" />
+		<aop:pointcut id="pointcut" expression="execution(* cn.itcast.pro.*.*.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut" />
 	</aop:config>
 

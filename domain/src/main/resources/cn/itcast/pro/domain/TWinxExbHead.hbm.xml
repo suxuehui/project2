@@ -5,7 +5,11 @@
 <hibernate-mapping>
 
     <class name="cn.itcast.pro.domain.TWinxExbHead" table="T_WINX_EXB_HEAD" schema="PROUSER">
-        <id name="id" column="ID"/>
+        <id name="id" column="ID">
+            <generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+                <param name="sequence_name">SEQ_T_WINX_EXB_HEAD_ID</param>
+            </generator>
+        </id>
         <property name="seqNo" column="SEQ_NO"/>
         <property name="preSeqNo" column="PRE_SEQ_NO"/>
         <property name="declDate" column="DECL_DATE"/>
@@ -48,5 +52,19 @@
         <property name="spt1" column="SPT1"/>
         <property name="spt2" column="SPT2"/>
         <property name="spt3" column="SPT3"/>
+
+
+        <!--与展览会备案表体 (展商名录) 一对多-->
+        <!--FIXME: 这里可能会出现不必要的问题, 待修复-->
+        <set name="TWinxExbEntLists" inverse="true" cascade="all">
+            <key column="EXB_ID"/>
+            <one-to-many class="cn.itcast.pro.domain.TWinxExbEntList"/>
+        </set>
+        <!--与展览会备案清单 一对多 级联 双向-->
+        <set name="TWinxExbBillLists" inverse="true" cascade="all">
+            <key column="EXB_ID"/>
+            <one-to-many class="cn.itcast.pro.domain.TWinxExbBillList"/>
+        </set>
+
     </class>
 </hibernate-mapping>

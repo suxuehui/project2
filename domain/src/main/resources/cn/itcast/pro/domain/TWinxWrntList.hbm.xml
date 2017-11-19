@@ -5,15 +5,24 @@
 <hibernate-mapping>
 
     <class name="cn.itcast.pro.domain.TWinxWrntList" table="T_WINX_WRNT_LIST" schema="PROUSER">
-        <id name="id" column="ID "/>
-        <property name="wrntId" column="WRNT_ID "/>
-        <property name="gNo" column="G_NO "/>
-        <property name="codeTs" column="CODE_TS "/>
-        <property name="gName" column="G_NAME "/>
-        <property name="createTime" column="CREATE_TIME "/>
-        <property name="updateTime" column="UPDATE_TIME "/>
-        <property name="spt1" column="SPT1 "/>
+        <id name="id" column="ID">
+            <generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+                <param name="sequence_name">SEQ_T_WINX_WRNT_LIST</param>
+            </generator>
+        </id>
+        <property name="wrntId" column="WRNT_ID"/>
+        <property name="gNo" column="G_NO"/>
+        <property name="codeTs" column="CODE_TS"/>
+        <property name="gName" column="G_NAME"/>
+        <property name="createTime" column="CREATE_TIME"/>
+        <property name="updateTime" column="UPDATE_TIME"/>
+        <property name="spt1" column="SPT1"/>
         <property name="spt2" column="SPT2"/>
         <property name="spt3" column="SPT3"/>
+
+
+        <!--与展览会行政许可清单表头 多对一-->
+        <many-to-one name="TWinxWrntHead" class="cn.itcast.pro.domain.TWinxWrntHead" column="WRNT_ID"/>
+
     </class>
 </hibernate-mapping>

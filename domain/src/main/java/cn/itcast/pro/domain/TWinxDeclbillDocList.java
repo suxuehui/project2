@@ -1,29 +1,31 @@
 package cn.itcast.pro.domain;
 
-import java.sql.Time;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by JohnBi on 2017-11-18. 17:24
  *
  * @author Lemon
  */
-public class TWinxDeclbillDocList {
-    private long id;
+public class TWinxDeclbillDocList implements Serializable {
+    private Long id;
     private Long declBillHeadId;
     private String docuNo;
     private String docuCode;
     private String certCode;
-    private Time createTime;
-    private Time updateTime;
+    private Date createTime;
+    private Date updateTime;
     private String spt1;
     private String spt2;
     private String spt3;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -59,19 +61,19 @@ public class TWinxDeclbillDocList {
         this.certCode = certCode;
     }
 
-    public Time getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Time createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
-    public Time getUpdateTime() {
+    public Date getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Time updateTime) {
+    public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
 

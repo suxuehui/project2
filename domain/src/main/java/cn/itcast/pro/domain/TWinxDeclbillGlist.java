@@ -1,14 +1,15 @@
 package cn.itcast.pro.domain;
 
-import java.sql.Time;
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by JohnBi on 2017-11-18. 17:24
  *
  * @author Lemon
  */
-public class TWinxDeclbillGlist {
-    private long id;
+public class TWinxDeclbillGlist implements Serializable {
+    private Long id;
     private Long declBillHeadId;
     private String gno;
     private String codeTs;
@@ -25,17 +26,17 @@ public class TWinxDeclbillGlist {
     private String qty2;
     private String unit2;
     private String originCountry;
-    private Time createTime;
-    private Time updateTime;
+    private Date createTime;
+    private Date updateTime;
     private String spt1;
     private String spt2;
     private String spt3;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -167,19 +168,19 @@ public class TWinxDeclbillGlist {
         this.originCountry = originCountry;
     }
 
-    public Time getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Time createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
-    public Time getUpdateTime() {
+    public Date getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Time updateTime) {
+    public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
 
@@ -207,65 +208,4 @@ public class TWinxDeclbillGlist {
         this.spt3 = spt3;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        TWinxDeclbillGlist that = (TWinxDeclbillGlist) o;
-
-        if (id != that.id) return false;
-        if (declBillHeadId != null ? !declBillHeadId.equals(that.declBillHeadId) : that.declBillHeadId != null)
-            return false;
-        if (gno != null ? !gno.equals(that.gno) : that.gno != null) return false;
-        if (codeTs != null ? !codeTs.equals(that.codeTs) : that.codeTs != null) return false;
-        if (gname != null ? !gname.equals(that.gname) : that.gname != null) return false;
-        if (gmodel != null ? !gmodel.equals(that.gmodel) : that.gmodel != null) return false;
-        if (tradeDocCode != null ? !tradeDocCode.equals(that.tradeDocCode) : that.tradeDocCode != null) return false;
-        if (declQty != null ? !declQty.equals(that.declQty) : that.declQty != null) return false;
-        if (declUnit != null ? !declUnit.equals(that.declUnit) : that.declUnit != null) return false;
-        if (declPrice != null ? !declPrice.equals(that.declPrice) : that.declPrice != null) return false;
-        if (declTotal != null ? !declTotal.equals(that.declTotal) : that.declTotal != null) return false;
-        if (teadeCurr != null ? !teadeCurr.equals(that.teadeCurr) : that.teadeCurr != null) return false;
-        if (qty1 != null ? !qty1.equals(that.qty1) : that.qty1 != null) return false;
-        if (unit1 != null ? !unit1.equals(that.unit1) : that.unit1 != null) return false;
-        if (qty2 != null ? !qty2.equals(that.qty2) : that.qty2 != null) return false;
-        if (unit2 != null ? !unit2.equals(that.unit2) : that.unit2 != null) return false;
-        if (originCountry != null ? !originCountry.equals(that.originCountry) : that.originCountry != null)
-            return false;
-        if (createTime != null ? !createTime.equals(that.createTime) : that.createTime != null) return false;
-        if (updateTime != null ? !updateTime.equals(that.updateTime) : that.updateTime != null) return false;
-        if (spt1 != null ? !spt1.equals(that.spt1) : that.spt1 != null) return false;
-        if (spt2 != null ? !spt2.equals(that.spt2) : that.spt2 != null) return false;
-        if (spt3 != null ? !spt3.equals(that.spt3) : that.spt3 != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = (int) (id ^ (id >>> 32));
-        result = 31 * result + (declBillHeadId != null ? declBillHeadId.hashCode() : 0);
-        result = 31 * result + (gno != null ? gno.hashCode() : 0);
-        result = 31 * result + (codeTs != null ? codeTs.hashCode() : 0);
-        result = 31 * result + (gname != null ? gname.hashCode() : 0);
-        result = 31 * result + (gmodel != null ? gmodel.hashCode() : 0);
-        result = 31 * result + (tradeDocCode != null ? tradeDocCode.hashCode() : 0);
-        result = 31 * result + (declQty != null ? declQty.hashCode() : 0);
-        result = 31 * result + (declUnit != null ? declUnit.hashCode() : 0);
-        result = 31 * result + (declPrice != null ? declPrice.hashCode() : 0);
-        result = 31 * result + (declTotal != null ? declTotal.hashCode() : 0);
-        result = 31 * result + (teadeCurr != null ? teadeCurr.hashCode() : 0);
-        result = 31 * result + (qty1 != null ? qty1.hashCode() : 0);
-        result = 31 * result + (unit1 != null ? unit1.hashCode() : 0);
-        result = 31 * result + (qty2 != null ? qty2.hashCode() : 0);
-        result = 31 * result + (unit2 != null ? unit2.hashCode() : 0);
-        result = 31 * result + (originCountry != null ? originCountry.hashCode() : 0);
-        result = 31 * result + (createTime != null ? createTime.hashCode() : 0);
-        result = 31 * result + (updateTime != null ? updateTime.hashCode() : 0);
-        result = 31 * result + (spt1 != null ? spt1.hashCode() : 0);
-        result = 31 * result + (spt2 != null ? spt2.hashCode() : 0);
-        result = 31 * result + (spt3 != null ? spt3.hashCode() : 0);
-        return result;
-    }
 }

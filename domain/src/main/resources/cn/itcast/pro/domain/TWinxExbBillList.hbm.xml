@@ -1,11 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
     <class name="cn.itcast.pro.domain.TWinxExbBillList" table="T_WINX_EXB_BILL_LIST" schema="PROUSER">
-        <id name="id" column="ID"/>
+        <id name="id" column="ID">
+            <generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+                <param name="sequence_name">SEQ_T_WINX_EXB_BILL_LIST</param>
+            </generator>
+        </id>
         <property name="exbId" column="EXB_ID"/>
         <property name="gNo" column="G_NO"/>
         <property name="codeTs" column="CODE_TS"/>
@@ -15,5 +19,8 @@
         <property name="spt1" column="SPT1"/>
         <property name="spt2" column="SPT2"/>
         <property name="spt3" column="SPT3"/>
+
+        <many-to-one name="TWinxExbHead" class="cn.itcast.pro.domain.TWinxExbHead" column="EXB_ID"/>
+
     </class>
 </hibernate-mapping>

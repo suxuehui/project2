@@ -6,13 +6,13 @@
 
     <class name="cn.itcast.pro.domain.ReDpEntlist" table="RE_DP_ENTLIST" schema="PROUSER">
         <id name="id" column="ID"/>
-        <property name="reDpHeadId" column="RE_DP_HEAD_ID "/>
-        <property name="exbEntNo" column="EXB_ENT_NO "/>
-        <property name="entName" column="ENT_NAME "/>
-        <property name="entCountry" column="ENT_COUNTRY "/>
-        <property name="createTime" column="CREATE_TIME "/>
-        <property name="updateTime" column="UPDATE_TIME "/>
-        <property name="spt1" column="SPT1 "/>
+        <property name="reDpHeadId" column="RE_DP_HEAD_ID"/>
+        <property name="exbEntNo" column="EXB_ENT_NO"/>
+        <property name="entName" column="ENT_NAME"/>
+        <property name="entCountry" column="ENT_COUNTRY"/>
+        <property name="createTime" column="CREATE_TIME"/>
+        <property name="updateTime" column="UPDATE_TIME"/>
+        <property name="spt1" column="SPT1"/>
         <property name="spt2" column="SPT2"/>
         <property name="spt3" column="SPT3"/>
     </class>

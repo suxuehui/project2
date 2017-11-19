@@ -1,17 +1,20 @@
 package cn.itcast.pro.domain;
 
-import java.sql.Time;
+import java.io.Serializable;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by JohnBi on 2017-11-18. 17:24
  *
  * @author Lemon
  */
-public class TWinxExbHead {
-    private long id;
+public class TWinxExbHead implements Serializable {
+    private Long id;
     private String seqNo;
     private String preSeqNo;
-    private Time declDate;
+    private Date declDate;
     private String exbNo;
     private String exbName;
     private String masterCustom;
@@ -23,8 +26,8 @@ public class TWinxExbHead {
     private String masterPrinpHone;
     private String undertakerName;
     private String checkPrin;
-    private Time openDate;
-    private Time closeDate;
+    private Date openDate;
+    private Date closeDate;
     private String exbRoom;
     private String exbArea;
     private String exbIntlArea;
@@ -44,19 +47,45 @@ public class TWinxExbHead {
     private String userName;
     private String orgCode;
     private String orgName;
-    private Time createTime;
-    private Time updateTime;
-    private Time sendCustomTime;
-    private Time sendInspectionTime;
+    private Date createTime;
+    private Date updateTime;
+    private Date sendCustomTime;
+    private Date sendInspectionTime;
     private String spt1;
     private String spt2;
     private String spt3;
 
-    public long getId() {
+
+    /**
+     * 与展览会备案表体 (展商名录) 一对多
+     */
+    private Set<TWinxExbEntList> tWinxExbEntLists = new HashSet<>();
+    /**
+     * 与展览会备案清单 一对一
+     */
+    private Set<TWinxExbBillList> tWinxExbBillLists = new HashSet<>();
+
+    public Set<TWinxExbBillList> getTWinxExbBillLists() {
+        return tWinxExbBillLists;
+    }
+
+    public void setTWinxExbBillLists(Set<TWinxExbBillList> tWinxExbBillLists) {
+        this.tWinxExbBillLists = tWinxExbBillLists;
+    }
+
+    public Set<TWinxExbEntList> getTWinxExbEntLists() {
+        return tWinxExbEntLists;
+    }
+
+    public void setTWinxExbEntLists(Set<TWinxExbEntList> tWinxExbEntLists) {
+        this.tWinxExbEntLists = tWinxExbEntLists;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -76,11 +105,11 @@ public class TWinxExbHead {
         this.preSeqNo = preSeqNo;
     }
 
-    public Time getDeclDate() {
+    public Date getDeclDate() {
         return declDate;
     }
 
-    public void setDeclDate(Time declDate) {
+    public void setDeclDate(Date declDate) {
         this.declDate = declDate;
     }
 
@@ -172,19 +201,19 @@ public class TWinxExbHead {
         this.checkPrin = checkPrin;
     }
 
-    public Time getOpenDate() {
+    public Date getOpenDate() {
         return openDate;
     }
 
-    public void setOpenDate(Time openDate) {
+    public void setOpenDate(Date openDate) {
         this.openDate = openDate;
     }
 
-    public Time getCloseDate() {
+    public Date getCloseDate() {
         return closeDate;
     }
 
-    public void setCloseDate(Time closeDate) {
+    public void setCloseDate(Date closeDate) {
         this.closeDate = closeDate;
     }
 
@@ -340,35 +369,35 @@ public class TWinxExbHead {
         this.orgName = orgName;
     }
 
-    public Time getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Time createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
-    public Time getUpdateTime() {
+    public Date getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Time updateTime) {
+    public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
 
-    public Time getSendCustomTime() {
+    public Date getSendCustomTime() {
         return sendCustomTime;
     }
 
-    public void setSendCustomTime(Time sendCustomTime) {
+    public void setSendCustomTime(Date sendCustomTime) {
         this.sendCustomTime = sendCustomTime;
     }
 
-    public Time getSendInspectionTime() {
+    public Date getSendInspectionTime() {
         return sendInspectionTime;
     }
 
-    public void setSendInspectionTime(Time sendInspectionTime) {
+    public void setSendInspectionTime(Date sendInspectionTime) {
         this.sendInspectionTime = sendInspectionTime;
     }
 
@@ -396,112 +425,4 @@ public class TWinxExbHead {
         this.spt3 = spt3;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        TWinxExbHead that = (TWinxExbHead) o;
-
-        if (id != that.id) return false;
-        if (seqNo != null ? !seqNo.equals(that.seqNo) : that.seqNo != null) return false;
-        if (preSeqNo != null ? !preSeqNo.equals(that.preSeqNo) : that.preSeqNo != null) return false;
-        if (declDate != null ? !declDate.equals(that.declDate) : that.declDate != null) return false;
-        if (exbNo != null ? !exbNo.equals(that.exbNo) : that.exbNo != null) return false;
-        if (exbName != null ? !exbName.equals(that.exbName) : that.exbName != null) return false;
-        if (masterCustom != null ? !masterCustom.equals(that.masterCustom) : that.masterCustom != null) return false;
-        if (recordCustom != null ? !recordCustom.equals(that.recordCustom) : that.recordCustom != null) return false;
-        if (apprName != null ? !apprName.equals(that.apprName) : that.apprName != null) return false;
-        if (apprNo != null ? !apprNo.equals(that.apprNo) : that.apprNo != null) return false;
-        if (masterName != null ? !masterName.equals(that.masterName) : that.masterName != null) return false;
-        if (masterPrin != null ? !masterPrin.equals(that.masterPrin) : that.masterPrin != null) return false;
-        if (masterPrinpHone != null ? !masterPrinpHone.equals(that.masterPrinpHone) : that.masterPrinpHone != null)
-            return false;
-        if (undertakerName != null ? !undertakerName.equals(that.undertakerName) : that.undertakerName != null)
-            return false;
-        if (checkPrin != null ? !checkPrin.equals(that.checkPrin) : that.checkPrin != null) return false;
-        if (openDate != null ? !openDate.equals(that.openDate) : that.openDate != null) return false;
-        if (closeDate != null ? !closeDate.equals(that.closeDate) : that.closeDate != null) return false;
-        if (exbRoom != null ? !exbRoom.equals(that.exbRoom) : that.exbRoom != null) return false;
-        if (exbArea != null ? !exbArea.equals(that.exbArea) : that.exbArea != null) return false;
-        if (exbIntlArea != null ? !exbIntlArea.equals(that.exbIntlArea) : that.exbIntlArea != null) return false;
-        if (attendCountryNum != null ? !attendCountryNum.equals(that.attendCountryNum) : that.attendCountryNum != null)
-            return false;
-        if (intlTraderNum != null ? !intlTraderNum.equals(that.intlTraderNum) : that.intlTraderNum != null)
-            return false;
-        if (taiwanTraderAppr != null ? !taiwanTraderAppr.equals(that.taiwanTraderAppr) : that.taiwanTraderAppr != null)
-            return false;
-        if (decno != null ? !decno.equals(that.decno) : that.decno != null) return false;
-        if (decnoPhone != null ? !decnoPhone.equals(that.decnoPhone) : that.decnoPhone != null) return false;
-        if (agentCode != null ? !agentCode.equals(that.agentCode) : that.agentCode != null) return false;
-        if (agentName != null ? !agentName.equals(that.agentName) : that.agentName != null) return false;
-        if (amentReason != null ? !amentReason.equals(that.amentReason) : that.amentReason != null) return false;
-        if (notes != null ? !notes.equals(that.notes) : that.notes != null) return false;
-        if (exbStatus != null ? !exbStatus.equals(that.exbStatus) : that.exbStatus != null) return false;
-        if (ieFlag != null ? !ieFlag.equals(that.ieFlag) : that.ieFlag != null) return false;
-        if (status != null ? !status.equals(that.status) : that.status != null) return false;
-        if (userId != null ? !userId.equals(that.userId) : that.userId != null) return false;
-        if (userName != null ? !userName.equals(that.userName) : that.userName != null) return false;
-        if (orgCode != null ? !orgCode.equals(that.orgCode) : that.orgCode != null) return false;
-        if (orgName != null ? !orgName.equals(that.orgName) : that.orgName != null) return false;
-        if (createTime != null ? !createTime.equals(that.createTime) : that.createTime != null) return false;
-        if (updateTime != null ? !updateTime.equals(that.updateTime) : that.updateTime != null) return false;
-        if (sendCustomTime != null ? !sendCustomTime.equals(that.sendCustomTime) : that.sendCustomTime != null)
-            return false;
-        if (sendInspectionTime != null ? !sendInspectionTime.equals(that.sendInspectionTime) : that.sendInspectionTime != null)
-            return false;
-        if (spt1 != null ? !spt1.equals(that.spt1) : that.spt1 != null) return false;
-        if (spt2 != null ? !spt2.equals(that.spt2) : that.spt2 != null) return false;
-        if (spt3 != null ? !spt3.equals(that.spt3) : that.spt3 != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = (int) (id ^ (id >>> 32));
-        result = 31 * result + (seqNo != null ? seqNo.hashCode() : 0);
-        result = 31 * result + (preSeqNo != null ? preSeqNo.hashCode() : 0);
-        result = 31 * result + (declDate != null ? declDate.hashCode() : 0);
-        result = 31 * result + (exbNo != null ? exbNo.hashCode() : 0);
-        result = 31 * result + (exbName != null ? exbName.hashCode() : 0);
-        result = 31 * result + (masterCustom != null ? masterCustom.hashCode() : 0);
-        result = 31 * result + (recordCustom != null ? recordCustom.hashCode() : 0);
-        result = 31 * result + (apprName != null ? apprName.hashCode() : 0);
-        result = 31 * result + (apprNo != null ? apprNo.hashCode() : 0);
-        result = 31 * result + (masterName != null ? masterName.hashCode() : 0);
-        result = 31 * result + (masterPrin != null ? masterPrin.hashCode() : 0);
-        result = 31 * result + (masterPrinpHone != null ? masterPrinpHone.hashCode() : 0);
-        result = 31 * result + (undertakerName != null ? undertakerName.hashCode() : 0);
-        result = 31 * result + (checkPrin != null ? checkPrin.hashCode() : 0);
-        result = 31 * result + (openDate != null ? openDate.hashCode() : 0);
-        result = 31 * result + (closeDate != null ? closeDate.hashCode() : 0);
-        result = 31 * result + (exbRoom != null ? exbRoom.hashCode() : 0);
-        result = 31 * result + (exbArea != null ? exbArea.hashCode() : 0);
-        result = 31 * result + (exbIntlArea != null ? exbIntlArea.hashCode() : 0);
-        result = 31 * result + (attendCountryNum != null ? attendCountryNum.hashCode() : 0);
-        result = 31 * result + (intlTraderNum != null ? intlTraderNum.hashCode() : 0);
-        result = 31 * result + (taiwanTraderAppr != null ? taiwanTraderAppr.hashCode() : 0);
-        result = 31 * result + (decno != null ? decno.hashCode() : 0);
-        result = 31 * result + (decnoPhone != null ? decnoPhone.hashCode() : 0);
-        result = 31 * result + (agentCode != null ? agentCode.hashCode() : 0);
-        result = 31 * result + (agentName != null ? agentName.hashCode() : 0);
-        result = 31 * result + (amentReason != null ? amentReason.hashCode() : 0);
-        result = 31 * result + (notes != null ? notes.hashCode() : 0);
-        result = 31 * result + (exbStatus != null ? exbStatus.hashCode() : 0);
-        result = 31 * result + (ieFlag != null ? ieFlag.hashCode() : 0);
-        result = 31 * result + (status != null ? status.hashCode() : 0);
-        result = 31 * result + (userId != null ? userId.hashCode() : 0);
-        result = 31 * result + (userName != null ? userName.hashCode() : 0);
-        result = 31 * result + (orgCode != null ? orgCode.hashCode() : 0);
-        result = 31 * result + (orgName != null ? orgName.hashCode() : 0);
-        result = 31 * result + (createTime != null ? createTime.hashCode() : 0);
-        result = 31 * result + (updateTime != null ? updateTime.hashCode() : 0);
-        result = 31 * result + (sendCustomTime != null ? sendCustomTime.hashCode() : 0);
-        result = 31 * result + (sendInspectionTime != null ? sendInspectionTime.hashCode() : 0);
-        result = 31 * result + (spt1 != null ? spt1.hashCode() : 0);
-        result = 31 * result + (spt2 != null ? spt2.hashCode() : 0);
-        result = 31 * result + (spt3 != null ? spt3.hashCode() : 0);
-        return result;
-    }
 }

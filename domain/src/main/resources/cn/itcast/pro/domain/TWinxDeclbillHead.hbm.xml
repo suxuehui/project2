@@ -4,44 +4,56 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="cn.itcast.pro.domain.TWinxDeclbillHead" table="T_WINX_DECLBILL_HEAD " schema="PROUSER">
-        <id name="id" column="ID "/>
-        <property name="seqNo" column="SEQ_NO "/>
-        <property name="preSeqNo" column="PRE_SEQ_NO "/>
-        <property name="declDate" column="DECL_DATE "/>
-        <property name="listNo" column="LIST_NO "/>
-        <property name="wrntNo" column="WRNT_NO "/>
-        <property name="exbNo" column="EXB_NO "/>
-        <property name="exbName" column="EXB_NAME "/>
-        <property name="masterCustom" column="MASTER_CUSTOM "/>
-        <property name="iePort" column="IE_PORT "/>
-        <property name="ieDate" column="IE_DATE "/>
-        <property name="agentCode" column="AGENT_CODE "/>
-        <property name="agentName" column="AGENT_NAME "/>
-        <property name="licenseNo" column="LICENSE_NO "/>
-        <property name="billNo" column="BILL_NO "/>
-        <property name="trafMode" column="TRAF_MODE "/>
-        <property name="tradeCountry" column="TRADE_COUNTRY "/>
-        <property name="packNo" column="PACK_NO "/>
-        <property name="wrapType" column="WRAP_TYPE "/>
-        <property name="grossWt" column="GROSS_WT "/>
-        <property name="netWt" column="NET_WT "/>
-        <property name="transMode" column="TRANS_MODE "/>
-        <property name="decno" column="DECNO "/>
-        <property name="decnoPhone" column="DECNO_PHONE "/>
-        <property name="notes" column="NOTES "/>
-        <property name="decType" column="DEC_TYPE "/>
-        <property name="status" column="STATUS "/>
-        <property name="userId" column="USER_ID "/>
-        <property name="userName" column="USER_NAME "/>
-        <property name="orgCode" column="ORG_CODE "/>
-        <property name="orgName" column="ORG_NAME "/>
-        <property name="createTime" column="CREATE_TIME "/>
-        <property name="updateTime" column="UPDATE_TIME "/>
-        <property name="sendCustomTime" column="SEND_CUSTOM_TIME "/>
-        <property name="sendInspectionTime" column="SEND_INSPECTION_TIME "/>
-        <property name="spt1" column="SPT1 "/>
+    <class name="cn.itcast.pro.domain.TWinxDeclbillHead" table="T_WINX_DECLBILL_HEAD" schema="PROUSER">
+        <id name="id" column="ID">
+            <generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+                <param name="sequence_name">SEQ_T_WINX_DECLBILL_HEAD</param>
+            </generator>
+        </id>
+
+        <property name="seqNo" column="SEQ_NO"/>
+        <property name="preSeqNo" column="PRE_SEQ_NO"/>
+        <property name="declDate" column="DECL_DATE"/>
+        <property name="listNo" column="LIST_NO"/>
+        <property name="wrntNo" column="WRNT_NO"/>
+        <property name="exbNo" column="EXB_NO"/>
+        <property name="exbName" column="EXB_NAME"/>
+        <property name="masterCustom" column="MASTER_CUSTOM"/>
+        <property name="iePort" column="IE_PORT"/>
+        <property name="ieDate" column="IE_DATE"/>
+        <property name="agentCode" column="AGENT_CODE"/>
+        <property name="agentName" column="AGENT_NAME"/>
+        <property name="licenseNo" column="LICENSE_NO"/>
+        <property name="billNo" column="BILL_NO"/>
+        <property name="trafMode" column="TRAF_MODE"/>
+        <property name="tradeCountry" column="TRADE_COUNTRY"/>
+        <property name="packNo" column="PACK_NO"/>
+        <property name="wrapType" column="WRAP_TYPE"/>
+        <property name="grossWt" column="GROSS_WT"/>
+        <property name="netWt" column="NET_WT"/>
+        <property name="transMode" column="TRANS_MODE"/>
+        <property name="decno" column="DECNO"/>
+        <property name="decnoPhone" column="DECNO_PHONE"/>
+        <property name="notes" column="NOTES"/>
+        <property name="decType" column="DEC_TYPE"/>
+        <property name="status" column="STATUS"/>
+        <property name="userId" column="USER_ID"/>
+        <property name="userName" column="USER_NAME"/>
+        <property name="orgCode" column="ORG_CODE"/>
+        <property name="orgName" column="ORG_NAME"/>
+        <property name="createTime" column="CREATE_TIME"/>
+        <property name="updateTime" column="UPDATE_TIME"/>
+        <property name="sendCustomTime" column="SEND_CUSTOM_TIME"/>
+        <property name="sendInspectionTime" column="SEND_INSPECTION_TIME"/>
+        <property name="spt1" column="SPT1"/>
         <property name="spt2" column="SPT2"/>
         <property name="spt3" column="SPT3"/>
+
+        <!--与展商列表一对多-->
+        <set name="TWinxDeclbillEntLists" inverse="true" cascade="all">
+            <key column="DECL_BILL_HEAD_ID"></key>
+            <one-to-many></one-to-many>
+        </set>
+
     </class>
 </hibernate-mapping>

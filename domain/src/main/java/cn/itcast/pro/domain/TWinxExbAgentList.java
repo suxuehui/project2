@@ -19,6 +19,19 @@ public class TWinxExbAgentList {
     private String spt2;
     private String spt3;
 
+    /**
+     * 与展商名录 多对一
+     */
+    private TWinxExbEntList tWinxExbEntList;
+
+    public TWinxExbEntList getTWinxExbEntList() {
+        return tWinxExbEntList;
+    }
+
+    public void setTWinxExbEntList(TWinxExbEntList tWinxExbEntList) {
+        this.tWinxExbEntList = tWinxExbEntList;
+    }
+
     public long getId() {
         return id;
     }

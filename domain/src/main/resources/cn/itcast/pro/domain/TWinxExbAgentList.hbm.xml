@@ -5,7 +5,11 @@
 <hibernate-mapping>
 
     <class name="cn.itcast.pro.domain.TWinxExbAgentList" table="T_WINX_EXB_AGENT_LIST" schema="PROUSER">
-        <id name="id" column="ID"/>
+        <id name="id" column="ID">
+            <generator class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+                <param name="sequence_name">SEQ_T_WINX_EXB_AGENT_LIST</param>
+            </generator>
+        </id>
         <property name="exbId" column="EXB_ID"/>
         <property name="agentNo" column="AGENT_NO"/>
         <property name="agentCode" column="AGENT_CODE"/>
@@ -15,5 +19,9 @@
         <property name="spt1" column="SPT1"/>
         <property name="spt2" column="SPT2"/>
         <property name="spt3" column="SPT3"/>
+
+        <!--与展商名录 多对一-->
+        <many-to-one name="TWinxExbEntList" column="EXB_ID" class="cn.itcast.pro.domain.TWinxExbEntList"/>
+
     </class>
 </hibernate-mapping>
