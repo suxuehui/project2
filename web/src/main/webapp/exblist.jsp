@@ -38,7 +38,7 @@
         <tbody style="font-weight: bold">
         <c:forEach items="${Exblist}" var="o" varStatus="status">
             <tr class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'" align="left">
-                <td><a href="recordAction_viewone?id=${o.id}">${o.exbName}</a></td>
+                <td><a href="recordAction_viewone?headid=${o.id}">${o.exbName}</a></td>
             </tr>
         </c:forEach>
         </tbody>

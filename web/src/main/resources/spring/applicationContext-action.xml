@@ -16,6 +16,7 @@
 	
 	<bean id="recordAction" class="cn.itcast.pro.action.RecordAction" scope="prototype">
         <property name="recordService" ref="recordService"/>
+        <property name="exbEntService" ref="exbEntService"/>
 	</bean>
 
 </beans>
