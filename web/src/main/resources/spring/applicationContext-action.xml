@@ -17,4 +17,8 @@
 	<bean id="recordAction" class="cn.itcast.pro.action.RecordAction" scope="prototype">
         <property name="recordService" ref="recordService"/>
 	</bean>
+	<bean class="cn.itcast.pro.action.ExbAction" id="exbAction" scope="prototype">
+		<property name="exbService" ref="exbService"/>
+	</bean>
+
 </beans>

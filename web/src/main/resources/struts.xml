@@ -12,7 +12,9 @@
         <action name="tested" class="recordAction" method="tested">
             <result name="tested">/record.jsp</result>
         </action>
-    </package>
 
-
+		<action name="exbAction_*" class="exbAction" method="{1}" >
+			<result name="tolist">/exblist.jsp</result>
+		</action>
+</package>
 </struts>

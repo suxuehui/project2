@@ -3,70 +3,72 @@ package cn.itcast.pro.action;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.log4j.Logger;
-import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.ApplicationAware;
 import org.apache.struts2.interceptor.RequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.LinkedHashSet;
 import java.util.Map;
-import java.util.Set;
 
 /**
- * Created by JohnBi on 2017-11-20. 16:57
- *
- * @author Lemon
+ * 
+ * @Description:
+ * @author:     传智播客 java学院    传智.袁新奇
+ * @version:    1.0
+ * @Company:    http://java.itcast.cn 
+ * @date:       2016年9月14日
  */
-public class BaseAction extends ActionSupport implements RequestAware, SessionAware, ApplicationAware {
-    private static final long serialVersionUID = 1L;
-    private static Logger log = Logger.getLogger(BaseAction.class);
 
-    protected Map<String, Object> request;
-    protected Map<String, Object> session;
-    protected Map<String, Object> application;
+//通过RequestAware, SessionAware, ApplicationAware实行接口获得request,session,application对象，action中就可直接调用
 
-    public Map<String, Object> getRequest() {
-        return request;
-    }
+public class BaseAction extends ActionSupport implements RequestAware, SessionAware, ApplicationAware{
+	private static Logger log = Logger.getLogger(BaseAction.class);
+	
+	private static final long serialVersionUID = 1L;
 
-    @Override
-    public void setRequest(Map<String, Object> request) {
-        this.request = request;
-    }
+	protected Map<String, Object> request;
+	protected Map<String, Object> session;
+	protected Map<String, Object> application;
 
-    public Map<String, Object> getSession() {
-        return session;
-    }
+	public Map<String, Object> getRequest() {
+		return request;
+	}
 
-    @Override
-    public void setSession(Map<String, Object> session) {
-        this.session = session;
-    }
+	public Map<String, Object> getSession() {
+		return session;
+	}
 
-    public Map<String, Object> getApplication() {
-        return application;
-    }
+	public Map<String, Object> getApplication() {
+		return application;
+	}
 
-    @Override
-    public void setApplication(Map<String, Object> application) {
-        this.application = application;
-    }
+	@Override
+	public void setRequest(Map<String, Object> request) {
+		this.request = request;
+	}
 
-    public void push(Object obj) {
-        ActionContext.getContext().getValueStack().push(obj);
-    }
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
 
-    public void put(String key, Object value) {
-        ActionContext.getContext().put(key, value);
-    }
-
-    public void responseToClient(String context, String type) throws IOException {
-        HttpServletResponse response = ServletActionContext.getResponse();
-        response.setCharacterEncoding("UTF-8");
-        response.setContentType(type);
-        response.getWriter().write(context);
-    }
-
+	@Override
+	public void setApplication(Map<String, Object> application) {
+		this.application = application;
+	}
+	
+	public void push(Object obj){
+		ActionContext.getContext().getValueStack().push(obj);
+	}
+	
+	public void put(String key,Object value){
+		ActionContext.getContext().put(key, value);
+	}
+	/**
+	 * 获取当前登录的用户对象
+	 * @return
+	 */
+	/*public User getCurUser(){
+		User user = (User)session.get(SysConstant.CURRENT_USER_INFO);
+		return user;
+	}*/
 }
