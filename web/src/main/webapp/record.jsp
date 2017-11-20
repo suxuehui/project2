@@ -22,9 +22,21 @@
                 onClickRow: function (rowIndex, rowData) {
                     console.log(rowData['id']);
 //                    ajax 获取境内代理企业列表
-                    $.post(
+                    $.post("recordAction_getAgentJson",
+                        { "entId": rowData['id'] },
+                        function(data){
+                            console.log(data);
+                            $('#agentTable tr:first').siblings().remove();
+                            $.each(data, function (i, n) {
+                                var str = "<tr><td class='center'>" + n['agentNo'] + "</td>";
+                                str += "<td class=\"center\">"+ n['agentCode'] +"</td>";
+                                str += "<td class=\"center\">"+ n['agentName'] +"</td></tr>";
 
-                    )
+                                $('#agentTable').append(str);
+                            });
+
+
+                        }, "json");
 
 
                     $('#entDetail').find('td:odd').each(function (i, n) {
@@ -358,9 +370,12 @@
             </tr>
         </table>
     </div>
-    <div style="width: 700px;float: left; margin-left: 25px">
+    <div style="width: 700px;height: 90px;float: left; margin-left: 25px;overflow:auto;border: 1px #ddd solid;">
 
-        <table class="list-style Interlaced" align="center">
+
+
+
+        <table class="list-style Interlaced" align="center" id="agentTable">
             <tr>
                 <td class="center">
                     序号
@@ -373,17 +388,25 @@
                 </td>
             </tr>
             <!-- 垃圾数据 -->
-            <tr>
-                <td class="center">1</td>
-                <td class="center">1231321</td>
-                <td class="center">上海国际展览运输有限公司</td>
-            </tr>
-            <tr>
-                <td class="center">1</td>
-                <td class="center">1231321</td>
-                <td class="center">上海国际展览运输有限公司</td>
-            </tr>
-
+            <%--<tr>--%>
+                <%--<td class="center">1</td>--%>
+                <%--<td class="center">1231321</td>--%>
+                <%--<td class="center">上海国际展览运输有限公司</td>--%>
+            <%--</tr>--%>
+            <%--<tr>--%>
+                <%--<td class="center">1</td>--%>
+                <%--<td class="center">1231321</td>--%>
+                <%--<td class="center">上海国际展览运输有限公司</td>--%>
+            <%--</tr><tr>--%>
+                <%--<td class="center">1</td>--%>
+                <%--<td class="center">1231321</td>--%>
+                <%--<td class="center">上海国际展览运输有限公司</td>--%>
+            <%--</tr>--%>
+            <%--<tr>--%>
+                <%--<td class="center">1</td>--%>
+                <%--<td class="center">1231321</td>--%>
+                <%--<td class="center">上海国际展览运输有限公司</td>--%>
+            <%--</tr>--%>
             <!-- 占格子 -->
         </table>
 

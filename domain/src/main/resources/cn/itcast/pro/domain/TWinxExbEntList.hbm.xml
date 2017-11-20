@@ -26,7 +26,7 @@
         <many-to-one name="TWinxExbHead" class="cn.itcast.pro.domain.TWinxExbHead" column="EXB_ID"/>
         <!-- 境内代理企业列表 一对多-->
 
-        <set name="TWinxExbAgentLists" inverse="true" cascade="all">
+        <set name="TWinxExbAgentLists" inverse="true" cascade="all" order-by="AGENT_NO">
             <key column="EXB_ID"/>
             <one-to-many class="cn.itcast.pro.domain.TWinxExbAgentList"/>
         </set>
