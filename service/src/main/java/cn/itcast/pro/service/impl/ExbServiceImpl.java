@@ -1,4 +1,4 @@
-package cn.itcast.pro.service.serviceImpl;
+package cn.itcast.pro.service.impl;
 
 import cn.itcast.pro.dao.BaseDao;
 import cn.itcast.pro.domain.TWinxExbHead;
