@@ -27,12 +27,12 @@
     <script src="easyui/jquery.easyui.min.js"></script>
 </head>
 <body>
-<div class="operate" style="margin-top:10px;height: 500px">
+<div class="operate" style="margin-top:10px;height: 250px;">
     <table class="easyui-datagrid"
-           data-options="fitColumns:true,singleSelect:true,rownumbers:true,fit: true" id="prod">
+           data-options="fitColumns:true,singleSelect:true,rownumbers:true,halign:'center'" id="prod" style="width: 100%;">
         <thead>
         <tr>
-            <th data-options="field:'code'">列表</th>
+            <th data-options="field:'code'">备案列表</th>
         </tr>
         </thead>
         <tbody style="font-weight: bold">

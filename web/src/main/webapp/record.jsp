@@ -23,14 +23,14 @@
                     console.log(rowData['id']);
 //                    ajax 获取境内代理企业列表
                     $.post("recordAction_getAgentJson",
-                        { "entId": rowData['id'] },
-                        function(data){
+                        {"entId": rowData['id']},
+                        function (data) {
                             console.log(data);
                             $('#agentTable tr:first').siblings().remove();
                             $.each(data, function (i, n) {
-                                var str = "<tr><td class='center'>" + n['agentNo'] + "</td>";
-                                str += "<td class=\"center\">"+ n['agentCode'] +"</td>";
-                                str += "<td class=\"center\">"+ n['agentName'] +"</td></tr>";
+                                var str = "<tr onclick='seeDetail(this)'><td class='center' name='agentNo'>" + n['agentNo'] + "</td>";
+                                str += "<td class=\"center\" name='agentCode'>" + n['agentCode'] + "</td>";
+                                str += "<td class=\"center\" name='agentName'>" + n['agentName'] + "</td></tr>";
 
                                 $('#agentTable').append(str);
                             });
@@ -67,6 +67,23 @@
                 }
             });
         });
+
+        var data;
+
+        function seeDetail(e) {
+            data = e.cells;
+            $('#agentDetail').find('td:odd').each(function (i, n) {
+                if (i >= 3) return;
+                var temp = data[i].innerText;
+                console.log(temp);
+                if (temp) {
+                    n.innerText = temp;
+                } else {
+                    n.innerText = "暂无";
+                }
+            })
+
+        }
 
         function addNewRow() {
             $('#dlg').dialog('open').dialog('setTitle', '添加展商');
@@ -283,7 +300,7 @@
                 <td class="center" style="width: 150px">
                     展商编号
                 </td>
-                <td class="exbEntNo" style="text-align: center;"><span style="color: red;">请选择右边一个展商</span></td>
+                <td class="exbEntNo" style="text-align: center;"><span style="color: red;">请选择一个展商</span></td>
             </tr>
             <tr>
                 <td class="center">
@@ -342,40 +359,38 @@
             </tbody>
         </table>
     </div>
-    <input type="button" value="新增" class="tdBtn" style="margin-left: 25px;" onclick="addNewRow()"/>
+    <input type="button" value="新增" class="tdBtn" style="margin-left: 10px;" onclick="addNewRow()"/>
 </div>
 
 
 <div style="margin-top: 25px;margin-bottom: 15px"><b>境内代理企业代表</b></div>
 <div style="height: 90px;">
     <div style=" width: 400px;float:left;">
-        <table class="list-style Interlaced" align="center">
+        <table class="list-style Interlaced" align="center" id="agentDetail">
             <tr>
                 <td class="center" style="width: 135px">
                     序号
                 </td>
-                <td>1</td>
+                <td class="agentNo"><span style="color: red;">请选择一个展商</span></td>
             </tr>
             <tr>
                 <td class="center">
                     境内报关代理
                 </td>
-                <td>12313133</td>
+                <td class="agentCode"></td>
             </tr>
             <tr>
                 <td class="center">
                     报关代理名称
                 </td>
-                <td>上海国际展览运输有限公司</td>
+                <td class="agentName"></td>
             </tr>
         </table>
     </div>
     <div style="width: 700px;height: 90px;float: left; margin-left: 25px;overflow:auto;border: 1px #ddd solid;">
 
 
-
-
-        <table class="list-style Interlaced" align="center" id="agentTable">
+        <table class="list-style Interlaced" align="center" id="agentTable" >
             <tr>
                 <td class="center">
                     序号
@@ -389,23 +404,23 @@
             </tr>
             <!-- 垃圾数据 -->
             <%--<tr>--%>
-                <%--<td class="center">1</td>--%>
-                <%--<td class="center">1231321</td>--%>
-                <%--<td class="center">上海国际展览运输有限公司</td>--%>
+            <%--<td class="center">1</td>--%>
+            <%--<td class="center">1231321</td>--%>
+            <%--<td class="center">上海国际展览运输有限公司</td>--%>
             <%--</tr>--%>
             <%--<tr>--%>
-                <%--<td class="center">1</td>--%>
-                <%--<td class="center">1231321</td>--%>
-                <%--<td class="center">上海国际展览运输有限公司</td>--%>
+            <%--<td class="center">1</td>--%>
+            <%--<td class="center">1231321</td>--%>
+            <%--<td class="center">上海国际展览运输有限公司</td>--%>
             <%--</tr><tr>--%>
-                <%--<td class="center">1</td>--%>
-                <%--<td class="center">1231321</td>--%>
-                <%--<td class="center">上海国际展览运输有限公司</td>--%>
+            <%--<td class="center">1</td>--%>
+            <%--<td class="center">1231321</td>--%>
+            <%--<td class="center">上海国际展览运输有限公司</td>--%>
             <%--</tr>--%>
             <%--<tr>--%>
-                <%--<td class="center">1</td>--%>
-                <%--<td class="center">1231321</td>--%>
-                <%--<td class="center">上海国际展览运输有限公司</td>--%>
+            <%--<td class="center">1</td>--%>
+            <%--<td class="center">1231321</td>--%>
+            <%--<td class="center">上海国际展览运输有限公司</td>--%>
             <%--</tr>--%>
             <!-- 占格子 -->
         </table>
@@ -419,26 +434,25 @@
 
 <div style="margin-top: 25px;margin-bottom: 15px"><b>展览会备案清单</b></div>
 <div style="height: 30px">
-    <div style="width: 800px; float: left;">
+    <div style="width: 1129px; float: left;">
         <table class="list-style Interlaced" align="center" id="billDetail">
             <tr>
                 <td class="center">序号</td>
                 <td class="gNo" style="text-align: center;background-color:#F5F5F5"><span
-                        style="color: #CC2222">右边查询</span></td>
+                        style="color: #CC2222">点击查看</span></td>
                 <td class="center">商品编码</td>
                 <td class="codeTs" style="text-align: center;background-color:#F5F5F5"><span
-                        style="color: #CC2222">右边查询</span></td>
+                        style="color: #CC2222">点击查看</span></td>
                 <td class="center">商品名称</td>
                 <td class="gName" style="text-align: center;background-color:#F5F5F5"><span
-                        style="color: #CC2222">右边查询</span></td>
+                        style="color: #CC2222">点击查看</span></td>
             </tr>
 
         </table>
     </div>
-    <div style="width: 200px;float: right;">
-        <input type="button" value="新增" class="tdBtn"/>
-        <input type="button" value="删除" class="tdBtn"/>
-    </div>
+    <input type="button" value="新增" class="tdBtn" style="margin-left: 10px;"/>
+    <input type="button" value="删除" class="tdBtn" style="margin-left: 10px;"/>
+
 </div>
 <div style="height: 100px;width: 100%; margin-top: 15px">
     <table class="easyui-datagrid list-style Interlaced" id="billList" align="center"
