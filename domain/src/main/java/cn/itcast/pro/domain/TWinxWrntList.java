@@ -11,7 +11,6 @@ import java.util.Date;
  */
 public class TWinxWrntList implements Serializable {
     private Long id;
-    private Long wrntId;
     private String gNo;
     private String codeTs;
     private String gName;
@@ -40,14 +39,6 @@ public class TWinxWrntList implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getWrntId() {
-        return wrntId;
-    }
-
-    public void setWrntId(Long wrntId) {
-        this.wrntId = wrntId;
     }
 
     public String getgNo() {

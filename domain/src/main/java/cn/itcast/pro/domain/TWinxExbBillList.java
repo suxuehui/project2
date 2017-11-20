@@ -11,7 +11,6 @@ import java.util.Date;
  */
 public class TWinxExbBillList implements Serializable{
     private Long id;
-    private Long exbId;
     private String gNo;
     private String codeTs;
     private String gName;
@@ -40,14 +39,6 @@ public class TWinxExbBillList implements Serializable{
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getExbId() {
-        return exbId;
-    }
-
-    public void setExbId(Long exbId) {
-        this.exbId = exbId;
     }
 
     public String getgNo() {

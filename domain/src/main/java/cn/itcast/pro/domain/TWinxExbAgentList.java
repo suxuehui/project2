@@ -8,8 +8,7 @@ import java.sql.Time;
  * @author Lemon
  */
 public class TWinxExbAgentList {
-    private long id;
-    private Long exbId;
+    private Long id;
     private String agentNo;
     private String agentCode;
     private String agentName;
@@ -32,20 +31,12 @@ public class TWinxExbAgentList {
         this.tWinxExbEntList = tWinxExbEntList;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getExbId() {
-        return exbId;
-    }
-
-    public void setExbId(Long exbId) {
-        this.exbId = exbId;
     }
 
     public String getAgentNo() {
@@ -112,39 +103,4 @@ public class TWinxExbAgentList {
         this.spt3 = spt3;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        TWinxExbAgentList that = (TWinxExbAgentList) o;
-
-        if (id != that.id) return false;
-        if (exbId != null ? !exbId.equals(that.exbId) : that.exbId != null) return false;
-        if (agentNo != null ? !agentNo.equals(that.agentNo) : that.agentNo != null) return false;
-        if (agentCode != null ? !agentCode.equals(that.agentCode) : that.agentCode != null) return false;
-        if (agentName != null ? !agentName.equals(that.agentName) : that.agentName != null) return false;
-        if (createTime != null ? !createTime.equals(that.createTime) : that.createTime != null) return false;
-        if (updateTime != null ? !updateTime.equals(that.updateTime) : that.updateTime != null) return false;
-        if (spt1 != null ? !spt1.equals(that.spt1) : that.spt1 != null) return false;
-        if (spt2 != null ? !spt2.equals(that.spt2) : that.spt2 != null) return false;
-        if (spt3 != null ? !spt3.equals(that.spt3) : that.spt3 != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = (int) (id ^ (id >>> 32));
-        result = 31 * result + (exbId != null ? exbId.hashCode() : 0);
-        result = 31 * result + (agentNo != null ? agentNo.hashCode() : 0);
-        result = 31 * result + (agentCode != null ? agentCode.hashCode() : 0);
-        result = 31 * result + (agentName != null ? agentName.hashCode() : 0);
-        result = 31 * result + (createTime != null ? createTime.hashCode() : 0);
-        result = 31 * result + (updateTime != null ? updateTime.hashCode() : 0);
-        result = 31 * result + (spt1 != null ? spt1.hashCode() : 0);
-        result = 31 * result + (spt2 != null ? spt2.hashCode() : 0);
-        result = 31 * result + (spt3 != null ? spt3.hashCode() : 0);
-        return result;
-    }
 }

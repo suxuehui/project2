@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>订单列表</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style/adminStyle.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/public.js"></script>
+</head>
+<body>
+ 
+  <div class="operate" style="margin-top:10px ">
+   <form>
+    <input type="button" value="新增" class="tdBtn"/>
+    <input type="button" value="暂存" class="tdBtn"/>
+    <input type="button" value="申报" class="tdBtn"/>
+    <input type="button" value="删除" class="tdBtn"/>
+    <input type="button" value="打印" class="tdBtn"/>
+    <input type="button" value="关联报关单" class="tdBtn"/>
+   </form>
+  </div>
+  <table class="list-style Interlaced">
+   <tr>
+  	 表头信息
+   </tr>
+   
+  <tr>
+    <td class="center">
+     <span class="block">暂存号</span>
+    </td>
+    <td>Zsd231212</td>
+   	<td class="center" colspan="2">
+   		<span class="block">核销清单预录入号</span>
+   	</td>
+   	<td>P123456123</td>
+   	<td class="center" colspan="2">
+   		<span class="block">填报日期</span>
+   	</td>
+   	<td colspan="4">20161013</td>
+   </tr>
+   <tr>
+   	<td class="center">
+   		<span>核销清单编号</span>
+   	</td>
+   	<td>H1624541215</td>
+   	<td class="center">
+   		<span>展览会编号</span>
+   	</td>
+   	<td colspan="2">H1621010100</td>
+   	<td class="center">
+   		<span>展览会名称</span>
+   	</td>
+   	<td colspan="4">中国际纺织机械展会</td>
+   </tr>
+   <tr>
+   	<td class="center">主管海关</td>
+   	<td>沪业二处</td>
+   	<td class="center">进出口岸代码</td>
+   	<td>浦东机场</td>
+   	<td class="center">进出口日期</td>
+   	<td></td>
+   	<td class="center">报关单类型</td>
+   	<td colspan="3">出口报关单</td>
+   </tr>
+   <tr>
+   	<td class="center">
+   		<span>申报单位代码</span>
+   	</td>
+   	<td>31012111</td>
+   	<td class="center">
+   		<span>申报单位名称</span>
+   	</td>
+   	<td colspan="2">上海国际展览运输有限公司</td>
+   	<td class="center">
+   		<span>许可证编号</span>
+   	</td>
+   	<td colspan="4"></td>
+   </tr>
+   <tr>
+   	<td class="center">
+   		<span>提运单号</span>
+   	</td>
+   	<td>332312111</td>
+   	<td class="center">
+   		<span>运输方式</span>
+   	</td>
+   	<td colspan="2">航空运输</td>
+   	<td class="center">
+   		<span>运抵国</span>
+   	</td>
+   	<td colspan="2">印度</td>
+   	<td class="center">件数</td>
+   	<td>2</td>
+   </tr>
+   <tr>
+   	<td class="center">包装种类</td>
+   	<td>其他</td>
+   	<td class="center">毛重</td>
+   	<td>635</td>
+   	<td class="center">净重</td>
+   	<td>331</td>
+   	<td class="center">成交方式</td>
+   	<td colspan="3">FOB</td>
+   </tr>
+   <tr>
+   	<td class="center">报关员</td>
+   	<td>56523</td>
+   	<td class="center">报关员联系电话</td>
+   	<td colspan="2">1231313</td>
+   	<td class="center" colspan="2">报关单统一编号</td>
+   	<td colspan="3">Z154134531</td>
+   </tr>
+   <!-- 垃圾数据 -->
+   </table>
+   随附单证列表
+   <form action="">
+   
+   <div style="width: 450px;height: 60px; float: left;">
+   	<table  class="list-style Interlaced">
+   		<tr>
+   			<td>序号</td>
+   			<td>1</td>
+   		</tr>
+   		<tr>
+   			<td>随附单证代码</td>
+   			<td>出境货物通关单</td>
+   		</tr>
+   		<tr>
+   			<td>随附单证编号</td>
+   			<td>2121325132123132</td>
+   		</tr>
+   	</table>
+   	<input type="button" value="新增" class="tdBtn"/>
+    <input type="button" value="删除" class="tdBtn"/>
+   </div>
+   <div style="width: 700px;height: 70px; float: right;">
+   		<table class="list-style Interlaced">
+   			<tr>
+   				<td>序号</td>
+   				<td>代码</td>
+   				<td>随附单证编号</td>
+   			</tr>
+   			<tr>
+   				<td>1</td>
+   				<td>B</td>
+   				<td>31032352131221</td>
+   			</tr>
+   			<tr>
+   				<td>2</td>
+   				<td>B</td>
+   				<td>31032352131221</td>
+   			</tr>
+   			<tr>
+   				<td>3</td>
+   				<td>B</td>
+   				<td>31032352131221</td>
+   			</tr>
+   		
+   		</table>
+   
+   </div>
+   </form>
+</body>
+</html>

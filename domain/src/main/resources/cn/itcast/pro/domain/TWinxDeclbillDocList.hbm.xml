@@ -10,7 +10,7 @@
                 <param name="sequence_name">SEQ_T_WINX_DECLBILL_DOC_LIST</param>
             </generator>
         </id>
-        <property name="declBillHeadId" column="DECL_BILL_HEAD_ID"/>
+
         <property name="docuNo" column="DOCU_NO"/>
         <property name="docuCode" column="DOCU_CODE"/>
         <property name="certCode" column="CERT_CODE"/>

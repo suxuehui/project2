@@ -10,7 +10,6 @@ import java.util.Date;
  */
 public class TWinxDeclbillGlist implements Serializable {
     private Long id;
-    private Long declBillHeadId;
     private String gno;
     private String codeTs;
     private String gname;
@@ -52,14 +51,6 @@ public class TWinxDeclbillGlist implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getDeclBillHeadId() {
-        return declBillHeadId;
-    }
-
-    public void setDeclBillHeadId(Long declBillHeadId) {
-        this.declBillHeadId = declBillHeadId;
     }
 
     public String getGno() {

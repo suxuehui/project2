@@ -1,0 +1,318 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>订单列表</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style/adminStyle.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/public.js"></script>
+</head>
+<body>
+ 
+  <div class="operate" style="margin-top:10px ">
+   <form>
+    <input type="button" value="新增" class="tdBtn"/>
+    <input type="button" value="暂存" class="tdBtn"/>
+    <input type="button" value="申报" class="tdBtn"/>
+    <input type="button" value="删除" class="tdBtn"/>
+    <input type="button" value="打印" class="tdBtn"/>
+    <input type="button" value="关联报关单" class="tdBtn"/>
+   </form>
+  </div>
+  <table class="list-style Interlaced">
+   <tr>
+  	 展商列表
+   </tr>
+   
+  <tr>
+    <td class="center">
+     <span class="block">展商编号</span>
+    </td>
+    <td class="center" width="100">
+     <span class="block">展商名称</span>
+    </td>
+    </td>
+    <td class="center">
+     <span class="block">展商国别</span>
+    </td>
+    <td class="center">
+     <span class="block">操作</span>
+    </td>
+   </tr>
+   
+   <!-- 垃圾数据 -->
+   <tr align="center">
+    <td>
+     <input type="checkbox"/>
+     <a href="order_detail.html">165</a>
+    </td>
+    <td class="center">
+     <span class="block">DeatGhost</span>
+    </td>
+    <td width="450">
+     <address>德国</address>
+    </td>
+    <td class="center">
+     <a href="order_detail.html" class="inline-block" title="查看"><img src="images/icon_view.gif"/></a>
+     <a class="inline-block" title="删除"><img src="images/icon_trash.gif"/></a>
+    </td>
+   </tr>
+   <tr align="center">
+    <td>
+     <input type="checkbox"/>
+     <a href="order_detail.html">165</a>
+    </td>
+    <td class="center">
+     <span class="block">DeatGhost</span>
+    </td>
+    <td width="450">
+     <address>德国</address>
+    </td>
+    <td class="center">
+     <a href="order_detail.html" class="inline-block" title="查看"><img src="images/icon_view.gif"/></a>
+     <a class="inline-block" title="删除"><img src="images/icon_trash.gif"/></a>
+    </td>
+   </tr>
+   <tr align="center">
+    <td>
+     <input type="checkbox"/>
+     <a href="order_detail.html">165</a>
+    </td>
+    <td class="center">
+     <span class="block">DeatGhost</span>
+    </td>
+    <td width="450">
+     <address>德国</address>
+    </td>
+    <td class="center">
+     <a href="order_detail.html" class="inline-block" title="查看"><img src="images/icon_view.gif"/></a>
+     <a class="inline-block" title="删除"><img src="images/icon_trash.gif"/></a>
+    </td>
+   </tr>
+   <!-- 占格子 -->
+   
+  </table>
+  <!-- BatchOperation -->
+  <div style="overflow:hidden;">
+	  <!-- turn page -->
+	  <div class="turnPage center fr">
+	   <a>第一页</a>
+	   <a>1</a>
+	   <a>最后一页</a>
+	  </div>
+  </div>
+  
+  
+  </div>
+  <table class="list-style Interlaced">
+   <tr>
+  	核销清单列表
+   </tr>
+   
+  <tr>
+    <td class="center">
+     <span class="block">序号</span>
+    </td>
+    <td class="center" width="100">
+     <span class="block">申报清单编号</span>
+    </td>
+    </td>
+    <td class="center">
+     <span class="block">申报清单商品序号</span>
+    </td>
+    <td class="center">
+     <span class="block">商品编码</span>
+    </td>
+    <td class="center">
+     <span class="block">商品名称</span>
+    </td>
+    <td class="center">
+     <span class="block">规格型号</span>
+    </td>
+    <td class="center">
+     <span class="block">核销数量</span>
+    </td>
+    <td class="center">
+     <span class="block">计量单位</span>
+    </td>
+   </tr>
+   
+   <!-- 垃圾数据 -->
+   <tr align="center">
+    <td>
+     <input type="checkbox"/>
+     1
+    </td>
+    <td class="center">
+     <span class="block">H1312H123232</span>
+    </td>
+    <td width="center">
+      <span class="block">4</span>
+    </td>
+    <td width="center">
+      <span class="block">45618651321</span>
+    </td>
+    <td width="center">
+      <span class="block">拉丝机</span>
+    </td>
+    <td width="center">
+      <span class="block">拉丝：不详：不详</span>
+    </td>
+    <td width="center">
+      <span class="block">2</span>
+    </td>
+    <td width="center">
+      <span class="block">台</span>
+    </td>
+   </tr>
+    <tr align="center">
+    <td>
+     <input type="checkbox"/>
+     1
+    </td>
+    <td class="center">
+     <span class="block">H1312H123232</span>
+    </td>
+    <td width="center">
+      <span class="block">4</span>
+    </td>
+    <td width="center">
+      <span class="block">45618651321</span>
+    </td>
+    <td width="center">
+      <span class="block">拉丝机</span>
+    </td>
+    <td width="center">
+      <span class="block">拉丝：不详：不详</span>
+    </td>
+    <td width="center">
+      <span class="block">2</span>
+    </td>
+    <td width="center">
+      <span class="block">台</span>
+    </td>
+   </tr>
+    <tr align="center">
+    <td>
+     <input type="checkbox"/>
+     1
+    </td>
+    <td class="center">
+     <span class="block">H1312H123232</span>
+    </td>
+    <td width="center">
+      <span class="block">4</span>
+    </td>
+    <td width="center">
+      <span class="block">45618651321</span>
+    </td>
+    <td width="center">
+      <span class="block">拉丝机</span>
+    </td>
+    <td width="center">
+      <span class="block">拉丝：不详：不详</span>
+    </td>
+    <td width="center">
+      <span class="block">2</span>
+    </td>
+    <td width="center">
+      <span class="block">台</span>
+    </td>
+   </tr>
+    <tr align="center">
+    <td>
+     <input type="checkbox"/>
+     1
+    </td>
+    <td class="center">
+     <span class="block">H1312H123232</span>
+    </td>
+    <td width="center">
+      <span class="block">4</span>
+    </td>
+    <td width="center">
+      <span class="block">45618651321</span>
+    </td>
+    <td width="center">
+      <span class="block">拉丝机</span>
+    </td>
+    <td width="center">
+      <span class="block">拉丝：不详：不详</span>
+    </td>
+    <td width="center">
+      <span class="block">2</span>
+    </td>
+    <td width="center">
+      <span class="block">台</span>
+    </td>
+   </tr>
+    <tr align="center">
+    <td>
+     <input type="checkbox"/>
+     1
+    </td>
+    <td class="center">
+     <span class="block">H1312H123232</span>
+    </td>
+    <td width="center">
+      <span class="block">4</span>
+    </td>
+    <td width="center">
+      <span class="block">45618651321</span>
+    </td>
+    <td width="center">
+      <span class="block">拉丝机</span>
+    </td>
+    <td width="center">
+      <span class="block">拉丝：不详：不详</span>
+    </td>
+    <td width="center">
+      <span class="block">2</span>
+    </td>
+    <td width="center">
+      <span class="block">台</span>
+    </td>
+   </tr>
+    <tr align="center">
+    <td>
+     <input type="checkbox"/>
+     1
+    </td>
+    <td class="center">
+     <span class="block">H1312H123232</span>
+    </td>
+    <td width="center">
+      <span class="block">4</span>
+    </td>
+    <td width="center">
+      <span class="block">45618651321</span>
+    </td>
+    <td width="center">
+      <span class="block">拉丝机</span>
+    </td>
+    <td width="center">
+      <span class="block">拉丝：不详：不详</span>
+    </td>
+    <td width="center">
+      <span class="block">2</span>
+    </td>
+    <td width="center">
+      <span class="block">台</span>
+    </td>
+   </tr>
+   <!-- 占格子 -->
+  </table>
+  <!-- BatchOperation -->
+  <div style="overflow:hidden;">
+	  <!-- turn page -->
+	  <div class="turnPage center fr">
+	   <a>第一页</a>
+	   <a>1</a>
+	   <a>最后一页</a>
+	  </div>
+  </div>
+  
+  
+ </div>
+</body>
+</html>

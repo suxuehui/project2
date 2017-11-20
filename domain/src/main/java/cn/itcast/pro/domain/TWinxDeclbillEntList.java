@@ -11,7 +11,6 @@ import java.util.Date;
  */
 public class TWinxDeclbillEntList implements Serializable {
     private Long id;
-    private Long declBillHeadId;
     private String exbEntNo;
     private String entName;
     private String entCountry;
@@ -42,14 +41,6 @@ public class TWinxDeclbillEntList implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getDeclBillHeadId() {
-        return declBillHeadId;
-    }
-
-    public void setDeclBillHeadId(Long declBillHeadId) {
-        this.declBillHeadId = declBillHeadId;
     }
 
     public String getExbEntNo() {

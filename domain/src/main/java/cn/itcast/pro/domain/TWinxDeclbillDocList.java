@@ -11,7 +11,6 @@ import java.util.Date;
  */
 public class TWinxDeclbillDocList implements Serializable {
     private Long id;
-    private Long declBillHeadId;
     private String docuNo;
     private String docuCode;
     private String certCode;
@@ -41,14 +40,6 @@ public class TWinxDeclbillDocList implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getDeclBillHeadId() {
-        return declBillHeadId;
-    }
-
-    public void setDeclBillHeadId(Long declBillHeadId) {
-        this.declBillHeadId = declBillHeadId;
     }
 
     public String getDocuNo() {

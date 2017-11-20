@@ -10,7 +10,6 @@
                 <param name="sequence_name">SEQ_T_WINX_DECLBILL_ENT_LIST</param>
             </generator>
         </id>
-        <property name="declBillHeadId" column="DECL_BILL_HEAD_ID"/>
         <property name="exbEntNo" column="EXB_ENT_NO"/>
         <property name="entName" column="ENT_NAME"/>
         <property name="entCountry" column="ENT_COUNTRY"/>

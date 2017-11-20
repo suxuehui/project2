@@ -10,7 +10,6 @@
                 <param name="sequence_name">SEQ_T_WINX_WRNT_LIST</param>
             </generator>
         </id>
-        <property name="wrntId" column="WRNT_ID"/>
         <property name="gNo" column="G_NO"/>
         <property name="codeTs" column="CODE_TS"/>
         <property name="gName" column="G_NAME"/>

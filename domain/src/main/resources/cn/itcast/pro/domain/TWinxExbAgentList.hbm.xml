@@ -10,7 +10,6 @@
                 <param name="sequence_name">SEQ_T_WINX_EXB_AGENT_LIST</param>
             </generator>
         </id>
-        <property name="exbId" column="EXB_ID"/>
         <property name="agentNo" column="AGENT_NO"/>
         <property name="agentCode" column="AGENT_CODE"/>
         <property name="agentName" column="AGENT_NAME"/>

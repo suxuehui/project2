@@ -10,7 +10,6 @@
                 <param name="sequence_name">SEQ_T_WINX_DECLBILL_GLIST</param>
             </generator>
         </id>
-        <property name="declBillHeadId" column="DECL_BILL_HEAD_ID"/>
         <property name="gno" column="GNO"/>
         <property name="codeTs" column="CODE_TS"/>
         <property name="gname" column="GNAME"/>
