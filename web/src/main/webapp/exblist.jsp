@@ -27,30 +27,27 @@
     <script src="easyui/jquery.easyui.min.js"></script>
 </head>
 <body>
-<div class="operate" style="margin-top:10px ">
-    <table  class="easyui-datagrid"
-           data-options="url:'datagrid_data.json',fitColumns:true,
-			 singleSelect:true,rownumbers:true"  align="center">
+<div class="operate" style="margin-top:10px;height: 500px">
+    <table class="easyui-datagrid"
+           data-options="fitColumns:true,singleSelect:true,rownumbers:true,fit: true" id="prod">
         <thead>
         <tr>
-            <th data-options="field:'code'" align="center">列表</th>
+            <th data-options="field:'code'">列表</th>
         </tr>
         </thead>
-        <tbody style="font-weight: bold" >
+        <tbody style="font-weight: bold">
         <c:forEach items="${Exblist}" var="o" varStatus="status">
-            <tr class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'" align="left" >
-                <td align="center"><a href="recordAction_viewone?exbid=${o.id}" style="align: center">${o.exbName}</a></td>
+            <tr class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'" align="left">
+                <td><a href="recordAction_viewone?id=${o.id}">${o.exbName}</a></td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
-    <%-------------------------------------------------------------%>
 </div>
 
-    <div style=" width: 400px;height: 150px;float:left;">
+<div style=" width: 400px;height: 150px;float:left;">
 
-    </div>
-
+</div>
 
 
 </div>
