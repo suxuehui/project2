@@ -18,7 +18,7 @@
  
   <li>
    <ul class="menu-children">
-    <li><a href="administrativeLicensing.html" title="" target="mainCont">行政许可清单</a></li>
+    <li><a href="wrnt.jsp" title="" target="mainCont">行政许可清单</a></li>
    </ul>
   </li>
   
@@ -50,7 +50,7 @@
   <li>
    <ul class="menu-children">
     <li><a href="record.html" title="" target="mainCont">展览会备案查询</a></li>
-    <li><a href="administrativeLicensing.html" title="" target="mainCont">进境行政许可清单查询</a></li>
+    <li><a href="wrnt.jsp" title="" target="mainCont">进境行政许可清单查询</a></li>
     <li><a href="entryDeclaration.html" title="" target="mainCont">进境申报清单查询</a></li>
     <li><a href="order_list.html" title="" target="mainCont">核销清单查询</a></li>
    </ul>

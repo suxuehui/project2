@@ -14,11 +14,9 @@
 	http://www.springframework.org/schema/context    
 	http://www.springframework.org/schema/context/spring-context.xsd">
 	
-	<bean id="recordAction" class="cn.itcast.pro.action.RecordAction" scope="prototype">
-        <property name="recordService" ref="recordService"/>
-	</bean>
-	<bean class="cn.itcast.pro.action.ExbAction" id="exbAction" scope="prototype">
-		<property name="exbService" ref="exbService"/>
+
+	<bean class="cn.itcast.pro.action.RecordAction" id="recordAction" scope="prototype">
+		<property name="recordService" ref="recordService"/>
 	</bean>
 
 </beans>

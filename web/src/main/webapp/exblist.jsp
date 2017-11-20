@@ -28,23 +28,23 @@
 </head>
 <body>
 <div class="operate" style="margin-top:10px ">
-    <table class="easyui-datagrid"
+    <table  class="easyui-datagrid"
            data-options="url:'datagrid_data.json',fitColumns:true,
-			 singleSelect:true,pagination:true,rownumbers:true" id="prod">
+			 singleSelect:true,rownumbers:true"  align="center">
         <thead>
         <tr>
-            <th data-options="field:'code'">列表</th>
-
+            <th data-options="field:'code'" align="center">列表</th>
         </tr>
         </thead>
         <tbody style="font-weight: bold" >
         <c:forEach items="${Exblist}" var="o" varStatus="status">
             <tr class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'" align="left" >
-                <td><a href="exbAction_viewone?exbid=${o.id}" >${o.exbName}</a></td>
+                <td align="center"><a href="recordAction_viewone?exbid=${o.id}" style="align: center">${o.exbName}</a></td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
+    <%-------------------------------------------------------------%>
 </div>
 
     <div style=" width: 400px;height: 150px;float:left;">
