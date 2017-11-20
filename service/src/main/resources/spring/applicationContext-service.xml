@@ -14,4 +14,7 @@
 	http://www.springframework.org/schema/context    
 	http://www.springframework.org/schema/context/spring-context.xsd">
 
-	</beans>
+	<bean class="cn.itcast.pro.service.impl.RecordServiceImpl" id="recordService">
+		<property name="baseDao" ref="baseDao"/>
+	</bean>
+</beans>
