@@ -13,7 +13,7 @@
  <a href="main.html" target="mainCont" class="block menu-list-title center" style="border:none;margin-bottom:8px;color:#fff;">首页</a>
  <ul>
    <ul class="menu-children">
-    <li><a href="${pageContext.request.contextPath}/exbAction_tolist" title="" target="mainCont">展览会备案</a></li>
+    <li><a href="${pageContext.request.contextPath}/recordAction_tolist" title="" target="mainCont">展览会备案</a></li>
    </ul>
  
   <li>

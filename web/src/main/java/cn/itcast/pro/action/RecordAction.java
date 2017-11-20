@@ -3,12 +3,25 @@ package cn.itcast.pro.action;
 import cn.itcast.pro.domain.TWinxExbHead;
 import cn.itcast.pro.service.RecordService;
 
+import java.util.List;
+
 /**
  * Created by JohnBi on 2017-11-20. 17:01
  *
  * @author Lemon
  */
 public class RecordAction extends BaseAction {
+
+    private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     private RecordService recordService;
 
     public void setRecordService(RecordService recordService) {
@@ -21,6 +34,18 @@ public class RecordAction extends BaseAction {
         TWinxExbHead one = recordService.getOne(id);
         push(one);
         return "tested";
+    }
+
+    public String tolist() throws Exception {
+        List<TWinxExbHead> list=recordService.find("from TWinxExbHead",TWinxExbHead.class,null);
+        this.put("Exblist",list);
+        return "tolist";
+    }
+
+    public String viewone() throws Exception {
+        TWinxExbHead tWinxExbHead =recordService.getOne(id);
+        this.push(tWinxExbHead);
+        return "viewone";
     }
 
 }

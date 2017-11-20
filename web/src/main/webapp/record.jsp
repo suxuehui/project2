@@ -1,12 +1,11 @@
 ﻿<%@page contentType="text/html; utf-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>会员列表</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
     <!-- easyui css js 包 开始-->
     <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css"/>
     <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
@@ -21,7 +20,13 @@
         $(function () {
             $('#entList').datagrid({
                 onClickRow: function (rowIndex, rowData) {
-//                    console.log(rowData);
+                    console.log(rowData['id']);
+//                    ajax 获取境内代理企业列表
+                    $.post(
+
+                    )
+
+
                     $('#entDetail').find('td:odd').each(function (i, n) {
                         var temp = rowData[n.className];
                         console.log(temp);
@@ -52,7 +57,7 @@
         });
 
         function addNewRow() {
-            $('#dlg').dialog('open').dialog('setTitle','添加展商');
+            $('#dlg').dialog('open').dialog('setTitle', '添加展商');
         }
 
 
@@ -66,30 +71,31 @@
     <form id="fm" method="post" novalidate>
         <div style="margin-top: 5px">
             <input name="exbEntNo" class="easyui-textbox" required="true" label="展商编号:"
-                   value="${z}" labelPosition="left"  style="width: 240px" value="">
+                   value="${z}" labelPosition="left" style="width: 240px" value="">
         </div>
         <div style="margin-top: 5px">
             <input name="entName" class="easyui-textbox" required="true" label="展商名称:"
-                   value="${entName}" labelPosition="left"  style="width: 240px">
+                   value="${entName}" labelPosition="left" style="width: 240px">
         </div>
         <div style="margin-top: 5px">
             <input name="entCountry" class="easyui-textbox" required="true" label="展商国别:"
-                   value="${entCountry}" labelPosition="left"  style="width: 240px">
+                   value="${entCountry}" labelPosition="left" style="width: 240px">
         </div>
         <div style="margin-top: 5px">
             <input name="roomNo" class="easyui-textbox" required="true" label="展馆号:"
-                   name="${roomNo}" labelPosition="left"  style="width: 240px">
+                   name="${roomNo}" labelPosition="left" style="width: 240px">
         </div>
         <div style="margin-top: 5px">
             <input name="placeNo" class="easyui-textbox" required="true" label="座位号:"
-                   value="${placeNo}" labelPosition="left"  style="width: 240px">
+                   value="${placeNo}" labelPosition="left" style="width: 240px">
         </div>
     </form>
 </div>
 <div id="dlg-buttons">
     <!--TODO: 添加增加展商的方法 -->
     <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveEnt()" style="width:90px">Save</a>
-    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close');$('#fm').form('clear');" style="width:90px">Cancel</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel"
+       onclick="javascript:$('#dlg').dialog('close');$('#fm').form('clear');" style="width:90px">Cancel</a>
 </div>
 <!---------------------------------------------------------------------------------->
 
@@ -301,6 +307,7 @@
                data-options="fitColumns:true,singleSelect:true,rownumbers:true,fit: true">
             <thead>
             <tr>
+                <th data-options="field:'id',width:100,hidden:true">展商ID</th>
                 <th data-options="field:'exbEntNo',width:100">展商编号</th>
                 <th data-options="field:'entName',width:100">展商名称</th>
                 <th data-options="field:'entCountry',width:100">展商国别</th>
@@ -312,6 +319,7 @@
             <%--@elvariable id="entList" type="cn.itcast.pro.domain.TWinxExbEntList"--%>
             <c:forEach items="${tWinxExbEntLists}" var="entList">
                 <tr>
+                    <td>${entList.id}</td>
                     <td>${entList.exbEntNo}</td>
                     <td>${entList.entName}</td>
                     <td>${entList.entCountry}</td>
@@ -392,11 +400,14 @@
         <table class="list-style Interlaced" align="center" id="billDetail">
             <tr>
                 <td class="center">序号</td>
-                <td class="gNo" style="text-align: center;background-color:#666666"><span style="color: #CC2222">右边查询</span> </td>
+                <td class="gNo" style="text-align: center;background-color:#F5F5F5"><span
+                        style="color: #CC2222">右边查询</span></td>
                 <td class="center">商品编码</td>
-                <td class="codeTs" style="text-align: center;background-color:#666666"><span style="color: #CC2222">右边查询</span></td>
+                <td class="codeTs" style="text-align: center;background-color:#F5F5F5"><span
+                        style="color: #CC2222">右边查询</span></td>
                 <td class="center">商品名称</td>
-                <td class="gName" style="text-align: center;background-color:#666666"><span style="color: #CC2222">右边查询</span></td>
+                <td class="gName" style="text-align: center;background-color:#F5F5F5"><span
+                        style="color: #CC2222">右边查询</span></td>
             </tr>
 
         </table>

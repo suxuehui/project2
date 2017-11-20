@@ -1,13 +1,13 @@
 package cn.itcast.pro.action;
 
 import cn.itcast.pro.domain.TWinxExbHead;
-import cn.itcast.pro.service.ExbService;
+import cn.itcast.pro.service.RecordService;
 import com.opensymphony.xwork2.ModelDriven;
 
 import java.util.List;
 
 public class ExbAction extends BaseAction implements ModelDriven{
-    private ExbService exbService;
+    private RecordService exbService;
     private String exbid;
 
     public String getExbid() {
@@ -18,7 +18,7 @@ public class ExbAction extends BaseAction implements ModelDriven{
         this.exbid = exbid;
     }
 
-    public void setExbService(ExbService exbService) {
+    public void setExbService(RecordService exbService) {
         this.exbService = exbService;
     }
 

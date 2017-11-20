@@ -9,12 +9,11 @@
     <constant name="struts.i18n.encoding" value="UTF-8"/>
 
     <package name="default" namespace="/" extends="struts-default">
-        <action name="tested" class="recordAction" method="tested">
-            <result name="tested">/record.jsp</result>
+        <action name="recordAction_*" class="recordAction" method="{1}">
+            <result name="tolist">/exblist.jsp</result>
+            <!--<result name="tested">/record.jsp</result>-->
+            <result name="viewone">/record.jsp</result>
         </action>
 
-		<action name="exbAction_*" class="exbAction" method="{1}" >
-			<result name="tolist">/exblist.jsp</result>
-		</action>
 </package>
 </struts>
