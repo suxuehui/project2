@@ -305,7 +305,7 @@
             </thead>
             <tbody>
             <%--@elvariable id="entList" type="cn.itcast.pro.domain.TWinxExbEntList"--%>
-            <c:forEach items="TWinxExbEntLists" var="entList">
+            <c:forEach items="${tWinxExbEntLists}" var="entList">
                 <tr>
                     <td>${entList.exbEntNo}</td>
                     <td>${entList.entName}</td>
@@ -415,7 +415,7 @@
         </thead>
         <tbody>
         <%--@elvariable id="billList" type="cn.itcast.pro.domain.TWinxExbBillList"--%>
-        <c:forEach items="TWinxExbBillLists" var="billList">
+        <c:forEach items="${tWinxExbBillLists}" var="billList">
             <tr>
                 <td>${billList.gNo }</td>
                 <td>${billList.codeTs }</td>
