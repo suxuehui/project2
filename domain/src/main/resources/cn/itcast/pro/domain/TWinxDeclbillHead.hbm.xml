@@ -50,13 +50,13 @@
         <property name="spt3" column="SPT3"/>
 
         <!--与展商列表一对多-->
-        <set name="TWinxDeclbillEntLists" inverse="true" cascade="all">
+        <set name="TWinxDeclbillEntLists" inverse="true" cascade="all" order-by="EXB_NO">
             <key column="DECL_BILL_HEAD_ID"/>
             <one-to-many class="cn.itcast.pro.domain.TWinxDeclbillEntList"/>
         </set>
 
         <!--与随附单证列表 一对多-->
-        <set name="TWinxDeclbillDocLists" inverse="true" cascade="all">
+        <set name="TWinxDeclbillDocLists" inverse="true" cascade="all" >
             <key column="DECL_BILL_HEAD_ID"/>
             <one-to-many class="cn.itcast.pro.domain.TWinxDeclbillDocList"/>
         </set>

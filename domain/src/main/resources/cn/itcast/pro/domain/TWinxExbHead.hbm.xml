@@ -56,12 +56,12 @@
 
         <!--与展览会备案表体 (展商名录) 一对多-->
         <!--FIXME: 这里可能会出现不必要的问题, 待修复-->
-        <set name="TWinxExbEntLists" inverse="true" cascade="all">
+        <set name="TWinxExbEntLists" inverse="true" cascade="all" order-by="EXB_ENT_NO">
             <key column="EXB_ID"/>
             <one-to-many class="cn.itcast.pro.domain.TWinxExbEntList"/>
         </set>
         <!--与展览会备案清单 一对多 级联 双向-->
-        <set name="TWinxExbBillLists" inverse="true" cascade="all">
+        <set name="TWinxExbBillLists" inverse="true" cascade="all" order-by="G_NO">
             <key column="EXB_ID"/>
             <one-to-many class="cn.itcast.pro.domain.TWinxExbBillList"/>
         </set>

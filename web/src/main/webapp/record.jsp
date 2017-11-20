@@ -37,7 +37,7 @@
 
             $('#billList').datagrid({
                 onClickRow: function (rowIndex, rowData) {
-//                    console.log(rowData);
+                    console.log(rowData);
                     $('#billDetail').find('td:odd').each(function (i, n) {
                         var temp = rowData[n.className];
                         console.log(temp);
@@ -260,31 +260,31 @@
                 <td class="center" style="width: 150px">
                     展商编号
                 </td>
-                <td class="exbEntNo">请选择右边一个展商</td>
+                <td class="exbEntNo" style="text-align: center;"><span style="color: red;">请选择右边一个展商</span></td>
             </tr>
             <tr>
                 <td class="center">
                     展商名称
                 </td>
-                <td class="entName"></td>
+                <td class="entName" style="text-align: center;"></td>
             </tr>
             <tr>
                 <td class="center">
                     展商国别
                 </td>
-                <td class="entCountry"></td>
+                <td class="entCountry" style="text-align: center;"></td>
             </tr>
             <tr>
                 <td class="center">
                     展馆号
                 </td>
-                <td class="roomNo"></td>
+                <td class="roomNo" style="text-align: center;"></td>
             </tr>
             <tr>
                 <td class="center">
                     座位号
                 </td>
-                <td class="placeNo"></td>
+                <td class="placeNo" style="text-align: center;"></td>
             </tr>
         </table>
 
@@ -382,16 +382,16 @@
 </div>
 
 <div style="margin-top: 25px;margin-bottom: 15px"><b>展览会备案清单</b></div>
-<div>
-    <div style="width: 800px; height: 50px; float: left;">
+<div style="height: 30px">
+    <div style="width: 800px; float: left;">
         <table class="list-style Interlaced" align="center" id="billDetail">
             <tr>
                 <td class="center">序号</td>
-                <td class="center">右边查询</td>
+                <td class="gNo" style="text-align: center;background-color:#666666"><span style="color: #CC2222">右边查询</span> </td>
                 <td class="center">商品编码</td>
-                <td class="center"></td>
+                <td class="codeTs" style="text-align: center;background-color:#666666"><span style="color: #CC2222">右边查询</span></td>
                 <td class="center">商品名称</td>
-                <td class="center"></td>
+                <td class="gName" style="text-align: center;background-color:#666666"><span style="color: #CC2222">右边查询</span></td>
             </tr>
 
         </table>
@@ -399,11 +399,9 @@
     <div style="width: 200px;float: right;">
         <input type="button" value="新增" class="tdBtn"/>
         <input type="button" value="删除" class="tdBtn"/>
-        <div style="display: none;"></div>
     </div>
 </div>
-<div>
-
+<div style="height: 100px;width: 100%; margin-top: 15px">
     <table class="easyui-datagrid list-style Interlaced" id="billList" align="center"
            data-options="fitColumns:true,singleSelect:true,rownumbers:true,fit: true">
         <thead>
