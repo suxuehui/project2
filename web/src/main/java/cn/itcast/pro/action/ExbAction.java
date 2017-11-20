@@ -8,6 +8,15 @@ import java.util.List;
 
 public class ExbAction extends BaseAction implements ModelDriven{
     private ExbService exbService;
+    private String exbid;
+
+    public String getExbid() {
+        return exbid;
+    }
+
+    public void setExbid(String exbid) {
+        this.exbid = exbid;
+    }
 
     public void setExbService(ExbService exbService) {
         this.exbService = exbService;
@@ -23,5 +32,11 @@ public class ExbAction extends BaseAction implements ModelDriven{
         List<TWinxExbHead> list=exbService.find("from TWinxExbHead",TWinxExbHead.class,null);
         this.put("Exblist",list);
         return "tolist";
+    }
+
+    public String viewone() throws Exception {
+        TWinxExbHead tWinxExbHead =exbService.get(TWinxExbHead.class,exbid);
+        this.push(tWinxExbHead);
+        return "viewone";
     }
 }

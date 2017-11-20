@@ -17,17 +17,19 @@ public class ExbServiceImpl implements ExbService {
 
     @Override
     public List<TWinxExbHead> find(String hql, Class<TWinxExbHead> entityClass, Object[] params) {
-        return null;
+        List<TWinxExbHead> list=baseDao.find(hql,entityClass,params);
+        return list;
     }
 
     @Override
     public TWinxExbHead get(Class<TWinxExbHead> entityClass, Serializable id) {
-        return null;
+        TWinxExbHead tWinxExbHead=baseDao.get(entityClass,id);
+        return tWinxExbHead;
     }
 
     @Override
     public void saveOrUpdate(TWinxExbHead entity) {
-
+        baseDao.saveOrUpdate(entity);
     }
 
     @Override
@@ -37,11 +39,14 @@ public class ExbServiceImpl implements ExbService {
 
     @Override
     public void deleteById(Class<TWinxExbHead> entityClass, Serializable id) {
-
+    baseDao.deleteById(entityClass,id);
     }
 
     @Override
     public void delete(Class<TWinxExbHead> entityClass, Serializable[] ids) {
+        for (Serializable id : ids) {
+            deleteById(entityClass,id);
+        }
 
     }
 }

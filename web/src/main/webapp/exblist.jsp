@@ -9,7 +9,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="/struts-tags" prefix="s" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
-
+<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+<script type="text/javascript" src="easyui/jquery.min.js"></script>
+<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="easyui/datagrid-detailview.js"></script>
+<link href="style/adminStyle.css" rel="stylesheet" type="text/css"/>
+<!--<script type="text/javascript" src="js/jquery.js"></script>-->
+<script type="text/javascript" src="js/public.js"></script>
 <head>
     <title>会员列表</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -17,7 +24,6 @@
     <script src="js/jquery.js"></script>
     <script src="js/public.js"></script>
     <script type="easyui/jquery.min.js"></script>
-    <script type="easyui/jquery.easyui.min.js"></script>
     <script src="easyui/jquery.easyui.min.js"></script>
 </head>
 <body>
@@ -34,7 +40,7 @@
         <tbody style="font-weight: bold" >
         <c:forEach items="${Exblist}" var="o" varStatus="status">
             <tr class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'" align="left" >
-                <td><a href="exbAction_viewone?id=${o.id}" ></a></td>
+                <td><a href="exbAction_viewone?exbid=${o.id}" >${o.exbName}</a></td>
             </tr>
         </c:forEach>
         </tbody>

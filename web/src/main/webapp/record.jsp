@@ -65,19 +65,24 @@
 
     <form id="fm" method="post" novalidate>
         <div style="margin-top: 5px">
-            <input name="exbEntNo" class="easyui-textbox" required="true" label="展商编号:" name="estoreprice" labelPosition="left"  style="width: 240px">
+            <input name="exbEntNo" class="easyui-textbox" required="true" label="展商编号:"
+                   value="${z}" labelPosition="left"  style="width: 240px" value="">
         </div>
         <div style="margin-top: 5px">
-            <input name="entName" class="easyui-textbox" required="true" label="展商名称:" name="estoreprice" labelPosition="left"  style="width: 240px">
+            <input name="entName" class="easyui-textbox" required="true" label="展商名称:"
+                   value="${entName}" labelPosition="left"  style="width: 240px">
         </div>
         <div style="margin-top: 5px">
-            <input name="entCountry" class="easyui-textbox" required="true" label="展商国别:" name="estoreprice" labelPosition="left"  style="width: 240px">
+            <input name="entCountry" class="easyui-textbox" required="true" label="展商国别:"
+                   value="${entCountry}" labelPosition="left"  style="width: 240px">
         </div>
         <div style="margin-top: 5px">
-            <input name="roomNo" class="easyui-textbox" required="true" label="展馆号:" name="estoreprice" labelPosition="left"  style="width: 240px">
+            <input name="roomNo" class="easyui-textbox" required="true" label="展馆号:"
+                   name="${roomNo}" labelPosition="left"  style="width: 240px">
         </div>
         <div style="margin-top: 5px">
-            <input name="placeNo" class="easyui-textbox" required="true" label="座位号:" name="estoreprice" labelPosition="left"  style="width: 240px">
+            <input name="placeNo" class="easyui-textbox" required="true" label="座位号:"
+                   value="${placeNo}" labelPosition="left"  style="width: 240px">
         </div>
     </form>
 </div>
