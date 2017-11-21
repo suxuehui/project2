@@ -21,4 +21,11 @@
     <bean class="cn.itcast.pro.service.impl.ExbEntServiceImpl" id="exbEntService">
         <property name="baseDao" ref="baseDao"/>
     </bean>
+	<bean class="cn.itcast.pro.service.impl.ExbAgentServiceImpl" id="exbAgentService">
+		<property name="baseDao" ref="baseDao"/>
+	</bean>
+
+	<bean class="cn.itcast.pro.service.impl.ExbBillServiceImpl" id="exbBillService">
+		<property name="baseDao" ref="baseDao"/>
+	</bean>
 </beans>

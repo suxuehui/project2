@@ -11,6 +11,12 @@
     <bean id="recordEntAction" class="cn.itcast.pro.action.RecordEntAction" scope="prototype">
         <property name="recordService" ref="recordService"/>
         <property name="exbEntService" ref="exbEntService"/>
+        <property name="exbAgentService" ref="exbAgentService"/>
+     </bean>
+
+    <bean id="recordBillAction" class="cn.itcast.pro.action.RecordBillAction" scope="prototype">
+        <property name="exbBillService" ref="exbBillService"/>
+        <property name="recordService" ref="recordService"/>
     </bean>
 
 </beans>

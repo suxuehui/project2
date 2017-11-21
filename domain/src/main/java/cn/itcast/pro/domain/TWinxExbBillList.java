@@ -1,5 +1,8 @@
 package cn.itcast.pro.domain;
 
+import com.alibaba.fastjson.annotation.JSONField;
+import org.apache.struts2.json.annotations.JSON;
+
 import java.io.Serializable;
 import java.sql.Time;
 import java.util.Date;
@@ -25,6 +28,8 @@ public class TWinxExbBillList implements Serializable{
      */
     private TWinxExbHead tWinxExbHead;
 
+    @JSON(serialize = false)
+    @JSONField(serialize = false)
     public TWinxExbHead getTWinxExbHead() {
         return tWinxExbHead;
     }
@@ -41,11 +46,11 @@ public class TWinxExbBillList implements Serializable{
         this.id = id;
     }
 
-    public String getgNo() {
+    public String getGNo() {
         return gNo;
     }
 
-    public void setgNo(String gNo) {
+    public void setGNo(String gNo) {
         this.gNo = gNo;
     }
 
@@ -57,11 +62,11 @@ public class TWinxExbBillList implements Serializable{
         this.codeTs = codeTs;
     }
 
-    public String getgName() {
+    public String getGName() {
         return gName;
     }
 
-    public void setgName(String gName) {
+    public void setGName(String gName) {
         this.gName = gName;
     }
 

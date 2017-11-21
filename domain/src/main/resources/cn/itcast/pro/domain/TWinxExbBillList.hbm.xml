@@ -11,9 +11,9 @@
             </generator>
         </id>
 
-        <property name="gNo" column="G_NO"/>
+        <property name="GNo" column="G_NO"/>
         <property name="codeTs" column="CODE_TS"/>
-        <property name="gName" column="G_NAME"/>
+        <property name="GName" column="G_NAME"/>
         <property name="createTime" column="CREATE_TIME"/>
         <property name="updateTime" column="UPDATE_TIME"/>
         <property name="spt1" column="SPT1"/>
