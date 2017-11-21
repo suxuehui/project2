@@ -20,6 +20,10 @@
             <!--<result name="tested">/record.jsp</result>-->
             <result name="viewone">/record.jsp</result>
         </action>
+        
+        <action name="recordEntAction_*" class="recordEntAction" method="{1}">
+            
+        </action>
 
 </package>
 </struts>

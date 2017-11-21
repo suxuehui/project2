@@ -56,7 +56,7 @@
 
         <!--与展览会备案表体 (展商名录) 一对多-->
         <!--FIXME: 这里可能会出现不必要的问题, 待修复-->
-        <set name="TWinxExbEntLists" inverse="true" cascade="all" order-by="EXB_ENT_NO">
+        <set name="TWinxExbEntLists" inverse="true" cascade="all" order-by="ID">
             <key column="EXB_ID"/>
             <one-to-many class="cn.itcast.pro.domain.TWinxExbEntList"/>
         </set>

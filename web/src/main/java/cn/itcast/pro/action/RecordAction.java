@@ -5,6 +5,7 @@ import cn.itcast.pro.domain.TWinxExbEntList;
 import cn.itcast.pro.domain.TWinxExbHead;
 import cn.itcast.pro.service.ExbEntService;
 import cn.itcast.pro.service.RecordService;
+import com.opensymphony.xwork2.ModelDriven;
 
 import java.util.List;
 import java.util.Set;
@@ -14,7 +15,7 @@ import java.util.Set;
  *
  * @author Lemon
  */
-public class RecordAction extends BaseAction {
+public class RecordAction extends BaseAction{
 
     private Long headid;
     private Long entId;
@@ -73,6 +74,14 @@ public class RecordAction extends BaseAction {
 
         push(tWinxExbAgentLists);
 
+        return "json";
+    }
+
+
+    public String getEntJson() {
+        TWinxExbHead head = recordService.getOne(headid);
+        Set<TWinxExbEntList> tWinxExbEntLists = head.getTWinxExbEntLists();
+        push(tWinxExbEntLists);
         return "json";
     }
 

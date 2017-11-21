@@ -2,6 +2,7 @@ package cn.itcast.pro.service.impl;
 
 import cn.itcast.pro.dao.BaseDao;
 import cn.itcast.pro.domain.TWinxExbEntList;
+import cn.itcast.pro.domain.TWinxExbHead;
 import cn.itcast.pro.service.ExbEntService;
 
 import java.io.Serializable;
@@ -51,6 +52,14 @@ public class ExbEntServiceImpl implements ExbEntService {
             deleteById(entityClass, id);
         }
 
+    }
+
+    @Override
+    public void saveEntAndSaveHead(TWinxExbHead head, TWinxExbEntList entity) {
+        // 不考虑修改的问题
+        // head 必须是持久态, 就是有 OID 
+        entity.setTWinxExbHead(head);
+        baseDao.saveOrUpdate(entity);
     }
 
     @Override

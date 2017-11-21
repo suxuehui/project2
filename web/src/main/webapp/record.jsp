@@ -34,8 +34,6 @@
 
                                 $('#agentTable').append(str);
                             });
-
-
                         }, "json");
 
 
@@ -50,8 +48,6 @@
                     })
                 }
             });
-
-
             $('#billList').datagrid({
                 onClickRow: function (rowIndex, rowData) {
                     console.log(rowData);
@@ -89,6 +85,26 @@
             $('#dlg').dialog('open').dialog('setTitle', '添加展商');
         }
 
+        function saveEnt() {
+//            TODO : 注意这个 id 是展览会表头的id 不是展商id
+            $.messager.progress();	// 显示进度条
+            $('#fm').form('submit', {
+                url: 'recordEntAction_saveEnt?headid=${id}',
+
+                success: function (data) {
+                    $.messager.progress('close');	// 如果提交成功则隐藏进度条
+                    var data = eval('(' + data + ')');
+                    alert(data.message);
+
+                    if (data.success) {
+                        $('#dlg').dialog('close');
+                        $('#fm').form('reset');
+                        $('#entList').datagrid({url:"recordAction_getEntJson?headid=${id}"});
+                    }
+                }
+            });
+        }
+
 
     </script>
 </head>
@@ -98,25 +114,26 @@
      closed="true" buttons="#dlg-buttons">
 
     <form id="fm" method="post" novalidate>
+
         <div style="margin-top: 5px">
-            <input name="exbEntNo" class="easyui-textbox" required="true" label="展商编号:"
-                   value="${z}" labelPosition="left" style="width: 240px" value="">
+            <input name="exbEntNo" class="easyui-numberbox" required="true" label="展商编号:"
+                   value="" labelPosition="left" style="width: 240px" >
         </div>
         <div style="margin-top: 5px">
             <input name="entName" class="easyui-textbox" required="true" label="展商名称:"
-                   value="${entName}" labelPosition="left" style="width: 240px">
+                   value="" labelPosition="left" style="width: 240px">
         </div>
         <div style="margin-top: 5px">
             <input name="entCountry" class="easyui-textbox" required="true" label="展商国别:"
-                   value="${entCountry}" labelPosition="left" style="width: 240px">
+                   value="" labelPosition="left" style="width: 240px">
         </div>
         <div style="margin-top: 5px">
             <input name="roomNo" class="easyui-textbox" required="true" label="展馆号:"
-                   name="${roomNo}" labelPosition="left" style="width: 240px">
+                   labelPosition="left" style="width: 240px">
         </div>
         <div style="margin-top: 5px">
-            <input name="placeNo" class="easyui-textbox" required="true" label="座位号:"
-                   value="${placeNo}" labelPosition="left" style="width: 240px">
+            <input name="palceNo" class="easyui-textbox" required="true" label="展位号:"
+                   value="" labelPosition="left" style="width: 240px">
         </div>
     </form>
 </div>
@@ -124,7 +141,7 @@
     <!--TODO: 添加增加展商的方法 -->
     <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveEnt()" style="width:90px">Save</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel"
-       onclick="javascript:$('#dlg').dialog('close');$('#fm').form('clear');" style="width:90px">Cancel</a>
+       onclick="javascript:$('#dlg').dialog('close');$('#fm').form('reset');" style="width:90px">Cancel</a>
 </div>
 <!---------------------------------------------------------------------------------->
 
@@ -388,9 +405,7 @@
         </table>
     </div>
     <div style="width: 700px;height: 90px;float: left; margin-left: 25px;overflow:auto;border: 1px #ddd solid;">
-
-
-        <table class="list-style Interlaced" align="center" id="agentTable" >
+        <table class="list-style Interlaced" align="center" id="agentTable">
             <tr>
                 <td class="center">
                     序号

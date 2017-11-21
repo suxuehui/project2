@@ -1,5 +1,7 @@
 package cn.itcast.pro.domain;
 
+import org.apache.struts2.json.annotations.JSON;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
@@ -34,7 +36,7 @@ public class TWinxExbEntList implements Serializable {
      */
     private Set<TWinxExbAgentList> tWinxExbAgentLists = new HashSet<>();
 
-
+    @JSON(serialize = false)
     public Set<TWinxExbAgentList> getTWinxExbAgentLists() {
         return tWinxExbAgentLists;
     }
@@ -42,7 +44,7 @@ public class TWinxExbEntList implements Serializable {
     public void setTWinxExbAgentLists(Set<TWinxExbAgentList> tWinxExbAgentLists) {
         this.tWinxExbAgentLists = tWinxExbAgentLists;
     }
-
+    @JSON(serialize = false)
     public TWinxExbHead getTWinxExbHead() {
         return tWinxExbHead;
     }

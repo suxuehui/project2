@@ -1,6 +1,7 @@
 package cn.itcast.pro.service;
 
 import cn.itcast.pro.domain.TWinxExbEntList;
+import cn.itcast.pro.domain.TWinxExbHead;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -39,4 +40,8 @@ public interface ExbEntService {
      */
     void delete(Class<TWinxExbEntList> entityClass, Serializable[] ids);
 
+    /**
+     * 双向关系保存数据
+     */
+    void saveEntAndSaveHead(TWinxExbHead head, TWinxExbEntList entity);
 }
